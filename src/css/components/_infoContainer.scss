@@ -5,13 +5,15 @@
 	flex-direction: column;
 	justify-content: space-around;
 	margin: 0;
-	padding: 60px 24px 0 24px;
+	// padding: 60px 24px 0 24px;
+	padding: 60px 0 60px 0;
 	width: 100%;
 
 	// TODO: media query for all screen sizes
 	@include media-lg {
 		flex-direction: row;	
-		padding: 124px 104px 0 104px;
+		// padding: 124px 104px 0 104px;
+		padding-top: 124px;
 	}
 
 	&--reversed {
@@ -23,30 +25,33 @@
 	}
 
 	&__textbox {
-		margin: 0;
-		padding: 0 24px 0 24px;
+		margin: 0 24px 40px 24px;
 		text-align: left;
 
+		@include media-lg {
+			margin: 0 104px 0 104px;	
+		}
 			&--row {
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
-				padding: 0;
+				margin: 0px;
+				text-align: left;
 			}
+
 	}
 
 	&__header {
 		margin: 0;
-		padding: 0 0 20px 0;	
+		padding-bottom: 20px;
 
 		@include media-lg {
-			padding: 104	
+			padding-bottom: 104px;
 		}
 	}
 
 	&__paragraph {
 		margin: 0;
-		padding: 0 0 20px 0;	
 	}
 
 	&__image {

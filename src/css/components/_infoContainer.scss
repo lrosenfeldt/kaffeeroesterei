@@ -1,0 +1,63 @@
+// Container with Info-Text + images
+.infoContainer {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin: 0;
+	padding: 60px 24px 0 24px;
+	width: 100%;
+
+	// TODO: media query for all screen sizes
+	@include media-lg {
+		flex-direction: row;	
+		padding: 124px 104px 0 104px;
+	}
+
+	&--reversed {
+		@extend .infoContainer;
+
+		@include media-lg {
+			flex-direction: row-reverse;
+		}
+	}
+
+	&__textbox {
+		margin: 0;
+		padding: 0 24px 0 24px;
+		text-align: left;
+
+			&--row {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				padding: 0;
+			}
+	}
+
+	&__header {
+		margin: 0;
+		padding: 0 0 20px 0;	
+
+		@include media-lg {
+			padding: 104	
+		}
+	}
+
+	&__paragraph {
+		margin: 0;
+		padding: 0 0 20px 0;	
+	}
+
+	&__image {
+		align-self: flex-end;
+		height: 100%;
+		max-height: 182px;
+		width: auto;
+
+		@include media-lg {
+			align-self: auto;
+			max-height: 391px;
+		}
+	}
+}

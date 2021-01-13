@@ -1,7 +1,54 @@
-@import "variables";
 @import "base";
+@import "breakpoints";
+@import "variables";
 @import "components/hero";
+@import "components/infoContainer";
+@import "components/invitationMap";
 
-:root {
-  --div-color: red;
+// example use for media query
+.example {
+
+	@include media-sm {
+		// font-size: 1px
+	}
+
+	@include media-md {
+
+	}
+
+	@include media-lg {
+
+	}
+
+	@include media-xl {
+
+	}
+
+	@include media-xxl {
+
+	}
+
+}
+
+// general document structure
+.header {
+
+}
+
+
+
+.shop {
+
+}
+
+.source {
+
+}
+
+.map {
+
+}
+
+.footer {
+
 }

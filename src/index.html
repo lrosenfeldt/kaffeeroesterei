@@ -1,22 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index Page</title>
+    <title>Rustica - Kaffeerösterei</title>
     <link rel="stylesheet" href="css/main.scss" />
     <link
-      href="https://fonts.googleapis.com/css?family=Oregano"
+      href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
+    <!-- <include src="header.html"></include> -->
   </head>
   <body>
-    <include src="header.html"></include>
-    <h1>Hello World!</h1>
-    <main>
-      <a href="./my-subpage/index.html">Link to Subpage</a>
-      <div>Home</div>
-    </main>
-    <script src="js/index.js"></script>
+    <div class="infoContainer">
+      <include src="infoCafe.html"></include>
+      <img class="infoContainer__image" src="/images/FEND-Coffee-shop.png"/>
+    </div>
+    <div class="infoContainer--reversed">
+      <div class="infoContainer__textbox">
+        <h3 class="infoContainer__header">Bio und Fair</h3>
+        <p class="infoContainer__paragraph">
+          Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und
+          Konsonantien leben die Blindtexte. Und das alles in bester Bio
+          Qualität.
+        </p>
+      </div>
+      <img class="infoContainer__image" src="/images/FEND-coffee-plant.png"/>
+    </div>
   </body>
 </html>

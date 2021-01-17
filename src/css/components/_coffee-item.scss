@@ -10,6 +10,10 @@
 		background-color: $color-medium-grey;	
 		margin-bottom: 11px;
 		width: 155px;
+
+		@include media-sm {
+			width: 300px;	
+		}
 	}
 
 	&__name {

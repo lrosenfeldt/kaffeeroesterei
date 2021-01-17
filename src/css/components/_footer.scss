@@ -2,15 +2,33 @@
 
 .footer {
 	background-color: black;
-	padding-top: 60px;
 	
 	&__grouping {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;	
-
-		&--title {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: flex-start;
 			padding-top: 15px;	
+
+			@include media-md {
+				justify-content: space-between;	
+				padding-right: 5%;
+			}
+
+			@include media-xl {
+				justify-content: space-between;	
+				padding-right: 10%;
+			}
+
+		&--adress {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+
+			@media (min-width: 512px) {
+				flex-direction: column;	
+				padding-right: 20px;
+			}
 		}
 	}
 
@@ -19,9 +37,28 @@
 		padding-right: 20px;
 		padding-bottom: 34px;
 
+		@media-sm {
+			padding-right: 40px;
+		}
+
+		@include media-md {
+			padding-right: 0px;
+		}
+
+		@include media-lg {
+			width: 174px;	
+		}
+
 		&--title {
 			width: 100%;	
 			padding-bottom: 34px;
+			flex-shrink: 0;
+
+			@include media-md {
+				width: auto;
+				flex-shrink: 1;
+				padding-right: 20px;
+			}
 		}
 	}
 

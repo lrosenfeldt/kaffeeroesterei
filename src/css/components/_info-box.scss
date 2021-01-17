@@ -17,13 +17,16 @@
 	}
 
 	&__textbox {
-	
+
+		@include media-md {
+			width: 46%;
+		}
 	}
 
 	&__image-container {
 		align-self: flex-end;
 		padding-top: 40px;
-		width: calc(64% + 2*#{$padding-container-m});
+		width: calc(64vw + 2*#{$padding-container-m});
 
 		@include media-md {
 			align-self: auto;

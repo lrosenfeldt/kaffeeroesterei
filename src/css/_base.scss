@@ -77,6 +77,11 @@ body {
 	padding-right: $padding-container-m;
 	width: 100%;
 
+	@include media-md {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+
 	&--padded {
 		@extend .container;
 		padding-top: $padding-container-top-m;	

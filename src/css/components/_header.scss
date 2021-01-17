@@ -4,13 +4,38 @@ $transition-duration: 0.5s;
 $transition-delay: 0.4s;
 
 .header {
-	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/small/FEND-Coffee-latte-art-3.png);
 	background-origin: border-box;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 75%;
 	width: 100%;
+
+	&--main {
+		@extend .header;
+		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-latte-art-3_mini.jpg);
+
+		@include media-sm {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-latte-art-3_sm.jpg);
+		}
+
+		@include media-md {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-latte-art-3_md.jpg);
+		}
+
+		@include media-lg {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-latte-art-3_lg.jpg);
+		}
+
+		@include media-xl {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-latte-art-3_xl.jpg);
+		}
+
+		@include media-xxl {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-latte-art-3.jpg);
+		}
+	}
+
 
 	&__button {
 		margin: auto;	
@@ -19,14 +44,54 @@ $transition-delay: 0.4s;
 
 	&--cafe {
 		@extend .header;
-		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/FEND-Coffee-shop.png);
 		height: 50%;
+		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-coffee-shop_mini-header.jpg);
+
+		@include media-sm {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-coffee-shop_sm.jpg);
+		}
+
+		@include media-md {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-coffee-shop_md.jpg);
+		}
+
+		@include media-lg {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-coffee-shop_lg.jpg);
+		}
+
+		@include media-xl {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-coffee-shop_xl.jpg);
+		}
+
+		@include media-xxl {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-coffee-shop.jpg);
+		}
 	}
 
 	&--source {
 		@extend .header;
-		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-coffee-beans-hand-2.jpg);
+		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-coffee-beans-hand-2_mini.jpg);
 		height: 50%;
+
+		@include media-sm {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-coffee-beans-hand-2_sm.jpg);
+		}
+
+		@include media-md {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-coffee-beans-hand-2_md.jpg);
+		}
+
+		@include media-lg {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-coffee-beans-hand-2_lg.jpg);
+		}
+
+		@include media-xl {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-coffee-beans-hand-2_xl.jpg);
+		}
+
+		@include media-xxl {
+			background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/images/fend-coffee-beans-hand-2.jpg);
+		}
 	}
 }
 

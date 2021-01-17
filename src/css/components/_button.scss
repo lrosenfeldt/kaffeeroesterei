@@ -1,0 +1,22 @@
+@import "variables";
+
+.button {
+	background-color: $color-anthrazit;
+	border-radius: 5px;
+	border: 2px solid $color-anthrazit;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: block;
+	padding: 15px 50px;
+	text-align: center;
+
+	&--light-border {
+		@extend .button;	
+		// for development purposes
+		border: 3px solid $color-white;
+	}
+
+	&__text {	
+		color: $color-white;
+	}
+}

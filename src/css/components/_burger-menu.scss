@@ -1,0 +1,45 @@
+@import "variables";
+
+.burger-menu {
+	position: absolute;
+	
+}
+
+.burger-menu {
+	background-image: url(/images/icons/burger_menu.png);
+	
+	&__checkbox {
+		// needed to preserve stacking context
+		position: relative;
+		z-index: 2;	
+	}
+}
+
+.overlay {
+	align-items: flex-start;
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: center;
+	left: 100vw;
+	position: absolute;
+	transition-duration: 0.5s;
+	width: 100vw;
+	z-index: 1;
+
+	&__linkStack {
+		padding-left: calc(60px - #{$padding-container-m});
+	}
+
+	&__link {
+		color: $color-white;
+		display: block;
+		padding-top: 12px;
+		padding-bottom: 12px;
+	}
+}
+
+#burger-checkbox:checked ~ .overlay {
+	left: 0vw;
+}

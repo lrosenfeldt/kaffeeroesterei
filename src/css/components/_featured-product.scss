@@ -1,0 +1,61 @@
+@import "variables";
+
+.featured-product {
+	padding-top: 60px;
+	padding-bottom: 60px;
+
+	&__header {
+		margin: auto;	
+		text-align: center;
+	}
+
+	&__image-box {
+		width: 100%;	
+		margin-bottom: 60px;
+	}
+
+	&__button {
+		margin: auto;	
+	}
+}
+
+.product-info-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 40px;
+}
+
+.product-info {
+		width: 33%;
+
+	&__icon {
+		background-origin: border-box;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		height: 49px;	
+		margin: auto;
+		margin-bottom: 23px;
+		width: 49px;
+
+		&--cup {
+			@extend .product-info__icon;
+			background-image: url(/images/icons/icon_coffee_cup-1.png);
+		}
+
+		&--shovel {
+			@extend .product-info__icon;
+			background-image: url(/images/icons/icon_coffee_shovel.png);
+		}
+
+		&--plant {
+			@extend .product-info__icon;
+			background-image: url(/images/icons/icon_coffee_plant.png);	
+		}
+	}
+
+	&__text {
+		text-align: center;
+	}
+}

@@ -1,0 +1,47 @@
+@import "variables";
+
+.info-box {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding-top: 60px;
+	padding-bottom: 60px;
+
+	&__image-container {
+		align-self: flex-end;
+		padding-top: 40px;
+		width: calc(64% + 2*#{$padding-container-m});
+
+		&--reverse {
+		@extend .info-box__image-container;
+		align-self: flex-start;	
+		}
+	}
+}
+
+.info-text {
+
+	&__paragraph {
+		padding-top: 20px;
+	}
+}
+
+.mini-text-box {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+
+	&__text {
+		width: 138px;
+
+		&--spacer {
+			@extend .mini-text-box__text;
+			margin-right: 20px;
+			// only needed when enough space (381px) -> media query
+			// margin-right: calc(100% - 2*#{$padding-container-m} - 2*138px);
+		}
+	}
+}

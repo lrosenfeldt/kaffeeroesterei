@@ -1,9 +1,20 @@
 @import "base";
 @import "breakpoints";
 @import "variables";
+// single components
+@import "components/button";
+@import "components/coffee-item";
 @import "components/hero";
-@import "components/infoContainer";
-@import "components/invitationMap";
+@import "components/logo";
+@import "components/navbar";
+// page sections
+@import "components/header";
+@import "components/info-box";
+@import "components/coffee-display";
+@import "components/source-banner";
+@import "components/featured-product";
+@import "components/os-map";
+@import "components/footer";
 
 // example use for media query
 .example {
@@ -30,25 +41,6 @@
 
 }
 
-// general document structure
-.header {
-
-}
-
-
-
-.shop {
-
-}
-
-.source {
-
-}
-
-.map {
-
-}
-
-.footer {
-
+.test {
+	background-color: pink;
 }

@@ -1,0 +1,69 @@
+@import "variables";
+// local variables
+$transition-duration: 0.5s;
+$transition-delay: 0.4s;
+
+.navbar {
+	align-items: flex-start;	
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 10px;
+	width: 100%;
+
+}
+
+.burger-menu {	
+	display: none;
+
+	&__label {
+		background-image: url(/images/icons/burger_menu.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		display: block;	
+		height: 35px;
+		position: relative;
+		transition-delay: calc(#{$transition-duration} - #{$transition-delay});
+		transition-duration: $transition-delay;
+		width: 35px;
+		z-index: 2;
+	}
+}
+
+.overlay {
+	align-items: flex-start;
+	background-color: black;
+	display: flex;
+	flex-direction: column;	
+	height: 100vh;
+	justify-content: center;
+	left: 100vw;
+	position: absolute;
+	top: 0;
+	transition-duration: 0.5s;
+	transition-timing-function: linear;
+	width: 100vw;
+
+	&__linkStack {
+		padding-left: calc(60px - #{$padding-container-m});
+	}
+
+	&__link {
+		color: $color-white;
+		display: block;
+		padding-bottom: 12px;	
+		padding-top: 12px;
+	}
+}
+
+#burger-checkbox:checked {
+	
+	&~.burger-menu__label {
+		background-image: url(/images/icons/close_x.png);	
+	}
+
+	&~.overlay {
+		left: 0;	
+	}
+}

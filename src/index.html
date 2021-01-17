@@ -9,24 +9,112 @@
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
-    <!-- <include src="header.html"></include> -->
+    <header class="container header">
+      <include src="navbar.html"></include>
+      <div class="banner">
+        <h1 class="h1 banner__text">Rustica</h1>
+        <p class="subhead-m banner__text">Bio und Fair seit 1991</p>
+      </div>
+      <button class="button header__button">
+        <a class="text button__text">zum Shop</a>
+      </button>
+    </header>
   </head>
   <body>
-    <div class="infoContainer">
-      <include src="infoCafe.html"></include>
-      <img class="infoContainer__image" src="/images/FEND-Coffee-shop.png"/>
+    <div class="container">
+      <section class="info-box">
+        <include src="info-text-cafe.html"></include>
+        <div class="info-box__image-container">
+          <picture>
+            <source media="(min-width: 1920px)"
+                    srcset="/images/FEND-Coffee-shop.png"/>
+            <source media="(min-width: 1200px)"
+                    srcset="/images/FEND-Coffee-shop_xl.png"/>
+            <source media="(min-width: 992px)"
+                    srcset="/images/FEND-Coffee-shop_lg.png"/>
+            <source media="(min-width: 768px)"
+                    srcset="/images/FEND-Coffee-shop_md.png"/>
+            <source media="(min-width: 576px)"
+                    srcset="/images/FEND-Coffee-shop_sm.png"/>
+            <img class="image" src="/images/FEND-Coffee-shop_mini.png"
+                 alt="Ein Bild vom inneren unserer Rösterei!"/>
+          </picture>
+        </div>
+      </section>
+      <section class="info-box">
+        <div class="info-text">
+          <h3 class="h3">Bio und Fair</h3>
+          <p class="text info-text__paragraph">
+            Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Und das alles in bester Bio Qualität.
+          </p>
+        </div>
+      <div class="info-box__image-container--reverse">
+        <picture>
+          <source media="(min-width: 1920px)"
+                  srcset="/images/FEND-coffee-plant.png"/>
+          <source media="(min-width: 1200px)"
+                  srcset="/images/FEND-coffee-plant_xl.png"/>
+          <source media="(min-width: 992px)"
+                  srcset="/images/FEND-coffee-plant_lg.png"/>
+          <source media="(min-width: 768px)"
+                  srcset="/images/FEND-coffee-plant_md.png"/>
+          <source media="(min-width: 576px)"
+                  srcset="/images/FEND-coffee-plant_sm.png"/>
+          <img class="image" src="/images/FEND-coffee-plant_mini.png"
+               alt="Bio-Kaffeeplanzen beim wachsen."/>
+        </picture>
+      </section>
     </div>
-    <div class="infoContainer--reversed">
-      <div class="infoContainer__textbox">
-        <h3 class="infoContainer__header">Bio und Fair</h3>
-        <p class="infoContainer__paragraph">
-          Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und
-          Konsonantien leben die Blindtexte. Und das alles in bester Bio
-          Qualität.
-        </p>
+    <section class="container coffee-display">
+      <h2 class="h2 coffee-display__header">Entdecke unsere Kaffeesorten</h2>
+      <div class="coffee-display__grouping">
+        <include src="coffee-item.html"></include>
+        <include src="coffee-item.html"></include>
+        <include src="coffee-item.html"></include>
+        <include src="coffee-item.html"></include>
       </div>
-      <img class="infoContainer__image" src="/images/FEND-coffee-plant.png"/>
-    </div>
-    <include src="invitationMap.html"></include>
+      <button class="button--light-border coffee-display__button"><a class="button__text">alle Produkte</a></button>
+    </section>
+    <section class="container source-banner">
+      <div class="source-banner__grouping">
+        <h3 class="h3 source-banner__text">Herkunft</h3>
+        <p class="text source-banner__text">
+          Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Und das alles in bester Bio Qualität.
+        </p>
+        <a class="text source-banner__text--link">mehr</a>
+      </div>
+    </section>
+    <section class="container featured-product">
+      <h2 class="h2 featured-product__header">Das steckt drin</h2>
+      <div class="featured-product__image-box">
+        <picture>
+          <!-- <source media="(min-width: 1920px)" srcset="/images/FEND-Coffee-shop.png"/> -->
+          <!-- <source media="(min-width: 1200px)" srcset="/images/FEND-Coffee-shop_xl.png"/> -->
+          <!-- <source media="(min-width: 992px)" srcset="/images/FEND-Coffee-shop_lg.png"/> -->
+          <!-- <source media="(min-width: 768px)" srcset="/images/FEND-Coffee-shop_md.png"/> -->
+          <!-- <source media="(min-width: 576px)" srcset="/images/FEND-Coffee-shop_sm.png"/> -->
+          <img class="image" src="/images/fend-coffee-costa-rica-1.png" alt=""/>
+        </picture>
+      </div>
+      <div class="featured-product__grouping">
+        <div class="product-info-container">
+          <div class="product-info">
+            <div class="product-info__icon--cup"></div>
+            <p class="text product-info__text">Bester<br>Geschmack</p>
+          </div>
+          <div class="product-info">
+            <div class="product-info__icon--shovel"></div>
+            <p class="text product-info__text">Fair<br>gehandelt</p>
+          </div>
+          <div class="product-info">
+            <div class="product-info__icon--plant"></div>
+            <p class="text product-info__text">Bio<br>Qualität</p>
+          </div>
+        </div>
+        <button class="button featured-product__button"><a class="text button__text">zum Shop</a></button>
+      </div>
+    </section>
+    <include src="os-map.html"></include>
+    <include src="footer.html"></include>
   </body>
 </html>

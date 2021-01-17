@@ -1,0 +1,35 @@
+@import "variables";
+
+.coffee-item {
+	padding-bottom: 41px;
+	padding-left: 6px;
+	padding-right: 6px;
+	margin: auto;
+	
+	&__image-box {
+		background-color: $color-medium-grey;	
+		margin-bottom: 11px;
+		width: 155px;
+	}
+
+	&__name {
+		color: $color-white;	
+	}
+
+	&__pricetag {
+		color: $color-medium-grey;	
+	}
+}
+
+.coffee-tag-row {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+
+	&__container {
+		height: $font-size-m;
+		width: $font-size-m;
+		padding-right: 11px;
+	}
+}

@@ -1,0 +1,41 @@
+@import "variables";
+
+.footer {
+	background-color: black;
+	padding-top: 60px;
+	
+	&__grouping {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;	
+
+		&--title {
+			padding-top: 15px;	
+		}
+	}
+
+	&__textbox {
+		width: 135px;	
+		padding-right: 20px;
+		padding-bottom: 34px;
+
+		&--title {
+			width: 100%;	
+			padding-bottom: 34px;
+		}
+	}
+
+	&__text {
+		color: $color-white;	
+
+		&--link {
+			@extend .footer__text;	
+			display: block;	
+		}
+	}
+}
+
+.h2--footer {
+	@extend .h2;
+	font-size: 24px;
+}

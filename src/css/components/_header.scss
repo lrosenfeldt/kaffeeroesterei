@@ -16,6 +16,12 @@ $transition-delay: 0.4s;
 		margin: auto;	
 		margin-top: 20px;
 	}
+
+	&--cafe {
+		@extend .header;
+		background-image: url(/images/FEND-Coffee-shop.png);
+		height: 50%;
+	}
 }
 
 .banner {

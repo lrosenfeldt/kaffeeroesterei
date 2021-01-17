@@ -4,14 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rustica - Kaffeerösterei</title>
-    <link rel="stylesheet" href="css/main.scss" />
+    <link rel="stylesheet" href="../css/main.scss" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
 	  <title>Rustica - Kaffeerösterei</title>
+    <header class="container header--cafe">
+      <include src="navbar.html"></include>
+    </header>
   </head>
   <body>
+    <div class="container">
+      <section class="info-box">
+        <include src="info-text-cafe.html"></include>
+        <div class="info-box__image-container">
+          <picture>
+            <source media="(min-width: 1920px)"
+                    srcset="/images/fend-coffee-machine-2.jpg"/>
+            <source media="(min-width: 1200px)"
+                    srcset="/images/fend-coffee-machine-2_xl.jpg"/>
+            <source media="(min-width: 992px)"
+                    srcset="/images/fend-coffee-machine-2_lg.jpg"/>
+            <source media="(min-width: 768px)"
+                    srcset="/images/fend-coffee-machine-2_md.jpg"/>
+            <source media="(min-width: 576px)"
+                    srcset="/images/fend-coffee-machine-2_sm.jpg"/>
+            <img class="image" src="/images/fend-coffee-machine-2_mini.jpg"
+                 alt="Ein Bild vom inneren unserer Rösterei!"/>
+          </picture>
+        </div>
+      </section>
+      <section class="info-box">
+        <div class="info-text">
+          <h2 class="h2">Frisches Gebäck von nebenan</h2>
+          <p class="text info-text__paragraph">
+            Als es die ersten Hügel des Kursivgebirges erklommen hatte, warf es einen letzten Blick zurück auf die Skyline seiner Heimatstadt Buchstabhausen, die Headline von Alphabetdorf. Wehmütig lief ihm eine rhetorische Frage über die Wange, dann setzte es seinen Weg fort. Unterwegs traf es eine Copy. Die Copy warnte das Blindtextchen, da, wo sie herkäme wäre sie zigmal umgeschrieben worden und alles, was von ihrem Ursprung noch übrig wäre, sei das Wort "und" und das Blindtextchen solle umkehren und wieder in sein eigenes, sicheres Land zurückkehren.
+          </p>
+        </div>
+      </section>
+    </div>
+    <include src="os-map.html"></include>
+    <include src="footer.html"></include>
   </body>
 </html>
 

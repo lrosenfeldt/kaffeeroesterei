@@ -30,6 +30,7 @@ body {
 .heading {
 	font-weight: $heading-weight;
 	line-height: $line-height-heading;
+	text-decoration: $font-text-decoration;
 }
 
 .h1 {
@@ -40,7 +41,6 @@ body {
 
 .h2 {
 	@extend .heading;
-	font-weight: $heading-weight;
 	font-size: $h2-size-m;
 
 	@include media-lg {

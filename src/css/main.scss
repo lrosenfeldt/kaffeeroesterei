@@ -4,6 +4,7 @@
 // single components
 @import "components/button";
 @import "components/coffee-item";
+@import "components/gallery";
 @import "components/logo";
 @import "components/navbar";
 // page sections
@@ -39,8 +40,4 @@
 
 	}
 
-}
-
-.test {
-	background-color: pink;
 }

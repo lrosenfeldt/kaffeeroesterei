@@ -8,6 +8,10 @@
 	font-family: $font-family;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 // standard typography, basic settings
 body {
 	height: 100vh;

@@ -32,8 +32,11 @@ $transition-delay: 0.4s;
 			@extend .burger-menu__label;
 			filter: invert(1);
 		}
-	}
 
+		@include media-lg {
+			display: none;
+		}
+	}
 }
 
 .overlay {
@@ -52,6 +55,11 @@ $transition-delay: 0.4s;
 
 	&__linkStack {
 		padding-left: calc(60px - #{$padding-container-m});
+
+		@include media-sm {
+			padding-left: 0;	
+			margin: auto;
+		}
 	}
 
 	&__link {
@@ -59,6 +67,10 @@ $transition-delay: 0.4s;
 		display: block;
 		padding-bottom: 12px;	
 		padding-top: 12px;
+	}
+
+	@include media-lg {
+		display: none;
 	}
 }
 
@@ -76,4 +88,21 @@ $transition-delay: 0.4s;
 	&~.overlay {
 		left: 0;	
 	}
+}
+
+.desktop-menu {
+	display: none;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 33%;
+
+	@include media-lg {
+		display: flex;	
+	}
+}
+
+.text--menu {
+	@extend .text;
+	color: $color-white;
+	font-weight: 500;
 }

@@ -5,4 +5,9 @@
 	background-size: cover;
 	height: 35px;
 	width: 35px;	
+
+	&--black {
+		@extend .logo;
+		filter: invert(1);
+	}
 }

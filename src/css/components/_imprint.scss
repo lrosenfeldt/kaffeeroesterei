@@ -1,0 +1,19 @@
+@import "variables";
+
+.imprint {
+	padding-bottom: 20px;
+
+	&__ul {
+		padding-left: $padding-container-m;	
+		list-style-type: "  -  ";
+	}
+
+	&__list-element {
+		padding-bottom: 20px;
+	}
+
+	&--last {
+		@extend .imprint;
+		padding-bottom: 0px;	
+	}
+}

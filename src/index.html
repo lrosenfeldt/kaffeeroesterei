@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rustica - Kaffeerösterei</title>
-    <link rel="stylesheet" href="css/main.scss" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/main.scss" />
     <header class="container header">
       <include src="navbar.html"></include>
       <div class="banner">
@@ -21,7 +21,7 @@
     </header>
   </head>
   <body>
-    <div class="container">
+    <div class="container--padded">
       <section class="info-box">
         <include src="info-text-cafe.html"></include>
         <div class="info-box__image-container">
@@ -41,10 +41,10 @@
           </picture>
         </div>
       </section>
-      <section class="info-box">
-        <div class="info-text">
+      <section class="info-box--padded">
+        <div class="info-box__textbox">
           <h3 class="h3">Bio und Fair</h3>
-          <p class="text info-text__paragraph">
+          <p class="text">
             Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte. Und das alles in bester Bio Qualität.
           </p>
         </div>
@@ -65,7 +65,7 @@
         </picture>
       </section>
     </div>
-    <section class="container coffee-display">
+    <section class="container--padded coffee-display">
       <h2 class="h2 coffee-display__header">Entdecke unsere Kaffeesorten</h2>
       <div class="coffee-display__grouping">
         <include src="coffee-item.html"></include>
@@ -84,8 +84,8 @@
         <a class="text source-banner__text--link">mehr</a>
       </div>
     </section>
-    <section class="container featured-product">
-      <h2 class="h2 featured-product__header">Das steckt drin</h2>
+    <section class="container--padded featured-product">
+      <h2 class="h2 featured-product__heading">Das steckt drin</h2>
       <div class="featured-product__image-box">
         <picture>
           <!-- <source media="(min-width: 1920px)" srcset="/images/FEND-Coffee-shop.png"/> -->

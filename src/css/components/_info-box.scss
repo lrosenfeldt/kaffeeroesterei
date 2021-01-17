@@ -5,8 +5,15 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding-top: 60px;
-	padding-bottom: 60px;
+
+	&--padded {
+		@extend .info-box;
+		padding-top: 40px;	
+	}
+
+	&__textbox {
+	
+	}
 
 	&__image-container {
 		align-self: flex-end;
@@ -20,13 +27,6 @@
 	}
 }
 
-.info-text {
-
-	&__paragraph {
-		padding-top: 20px;
-	}
-}
-
 .mini-text-box {
 	align-items: flex-start;
 	display: flex;
@@ -35,6 +35,7 @@
 	justify-content: flex-start;
 
 	&__text {
+		padding-top: 20px;
 		width: 138px;
 
 		&--spacer {

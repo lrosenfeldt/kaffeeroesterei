@@ -42,6 +42,7 @@ body {
 .h2 {
 	@extend .heading;
 	font-size: $h2-size-m;
+	padding-bottom: 20px;
 
 	@include media-lg {
 		font-size: $h2-size;
@@ -51,6 +52,7 @@ body {
 .h3 {
 	@extend .heading;
 	font-size: $h3-size-m;
+	padding-bottom: 12px;
 
 	@include media-lg {
 		font-size: $h3-size;
@@ -70,6 +72,12 @@ body {
 	padding-left: $padding-container-m;
 	padding-right: $padding-container-m;
 	width: 100%;
+
+	&--padded {
+		@extend .container;
+		padding-top: $padding-container-top-m;	
+		padding-bottom: $padding-container-top-m;	
+	}
 }
 
 .image {

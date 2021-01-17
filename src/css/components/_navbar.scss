@@ -10,7 +10,6 @@ $transition-delay: 0.4s;
 	justify-content: space-between;
 	padding-top: 10px;
 	width: 100%;
-
 }
 
 .burger-menu {	
@@ -28,7 +27,13 @@ $transition-delay: 0.4s;
 		transition-duration: $transition-delay;
 		width: 35px;
 		z-index: 2;
+
+		&--black {
+			@extend .burger-menu__label;
+			filter: invert(1);
+		}
 	}
+
 }
 
 .overlay {
@@ -61,6 +66,11 @@ $transition-delay: 0.4s;
 	
 	&~.burger-menu__label {
 		background-image: url(/images/icons/close_x.png);	
+	}
+
+	&~.burger-menu__label--black {
+		background-image: url(/images/icons/close_x.png);	
+		filter: invert(0);
 	}
 
 	&~.overlay {

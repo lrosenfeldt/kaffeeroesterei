@@ -16,7 +16,7 @@
         <p class="subhead-m banner__text">Bio und Fair seit 1991</p>
       </div>
       <button class="button header__button">
-        <a class="text button__text">zum Shop</a>
+        <a class="text button__text" href="/index.html#shop">zum Shop</a>
       </button>
     </header>
   </head>
@@ -66,7 +66,7 @@
       </section>
     </div>
     <section class="container--padded coffee-display">
-      <h2 class="h2 coffee-display__header">Entdecke unsere Kaffeesorten</h2>
+      <h2 class="h2 coffee-display__header" id="shop">Entdecke unsere Kaffeesorten</h2>
       <div class="coffee-display__grouping">
         <include src="coffee-item.html"></include>
         <include src="coffee-item.html"></include>
@@ -86,32 +86,32 @@
     </section>
     <section class="container--padded featured-product">
       <h2 class="h2 featured-product__heading">Das steckt drin</h2>
-      <div class="featured-product__image-box">
-        <picture>
-          <!-- <source media="(min-width: 1920px)" srcset="/images/FEND-Coffee-shop.png"/> -->
-          <!-- <source media="(min-width: 1200px)" srcset="/images/FEND-Coffee-shop_xl.png"/> -->
-          <!-- <source media="(min-width: 992px)" srcset="/images/FEND-Coffee-shop_lg.png"/> -->
-          <!-- <source media="(min-width: 768px)" srcset="/images/FEND-Coffee-shop_md.png"/> -->
-          <!-- <source media="(min-width: 576px)" srcset="/images/FEND-Coffee-shop_sm.png"/> -->
-          <img class="image" src="/images/fend-coffee-costa-rica-1.png" alt=""/>
-        </picture>
-      </div>
-      <div class="featured-product__grouping">
-        <div class="product-info-container">
-          <div class="product-info">
-            <div class="product-info__icon--cup"></div>
-            <p class="text product-info__text">Bester<br>Geschmack</p>
-          </div>
-          <div class="product-info">
-            <div class="product-info__icon--shovel"></div>
-            <p class="text product-info__text">Fair<br>gehandelt</p>
-          </div>
-          <div class="product-info">
-            <div class="product-info__icon--plant"></div>
-            <p class="text product-info__text">Bio<br>Qualität</p>
-          </div>
+      <div class="featured-product__flex-container">
+        <div class="featured-product__image-box">
+          <picture>
+            <source media="(min-width: 992px)" srcset="/images/fend-coffee-costa-rica.png"/>
+            <source media="(min-width: 768px)" srcset="/images/fend-coffee-costa-rica_md.png"/>
+            <source media="(min-width: 576px)" srcset="/images/fend-coffee-costa-rica_sm.png"/>
+            <img class="image" src="/images/fend-coffee-costa-rica_mini.png" alt=""/>
+          </picture>
         </div>
-        <button class="button featured-product__button"><a class="text button__text">zum Shop</a></button>
+        <div class="featured-product__grouping">
+          <div class="product-info-container">
+            <div class="product-info">
+              <div class="product-info__icon--cup"></div>
+              <p class="text product-info__text">Bester<br>Geschmack</p>
+            </div>
+            <div class="product-info">
+              <div class="product-info__icon--shovel"></div>
+              <p class="text product-info__text">Fair<br>gehandelt</p>
+            </div>
+            <div class="product-info">
+              <div class="product-info__icon--plant"></div>
+              <p class="text product-info__text">Bio<br>Qualität</p>
+            </div>
+          </div>
+          <button class="button featured-product__button"><a class="text button__text">zum Shop</a></button>
+        </div>
       </div>
     </section>
     <include src="os-map.html"></include>

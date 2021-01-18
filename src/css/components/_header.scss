@@ -40,6 +40,18 @@ $transition-delay: 0.4s;
 	&__button {
 		margin: auto;	
 		margin-top: 20px;
+
+		@include media-sm {
+			margin-top: 40px;
+		}
+
+		@include media-md {
+			margin-top: 80px;
+		}
+
+		@include media-lg {
+			margin-top: 80px;
+		}
 	}
 
 	&--cafe {

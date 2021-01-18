@@ -9,6 +9,18 @@
 	display: block;
 	padding: 15px 50px;
 	text-align: center;
+	transition-duration: 0.5s;
+	transition-timing-function: linear;
+
+	&:hover {
+		background-color: $color-medium-grey;
+		border: 2px solid $color-medium-grey;
+	}
+
+	&:active {
+		background-color: $color-kraftpapier;
+		border: 2px solid $color-kraftpapier;
+	}
 
 	&--light-border {
 		@extend .button;	

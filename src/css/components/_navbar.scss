@@ -5,6 +5,8 @@ $transition-delay: 0.4s;
 
 .navbar {
   align-items: flex-start;
+  color: $color-white;
+  border-color: $color-white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -56,11 +58,6 @@ $transition-delay: 0.4s;
 
   &__linkStack {
     padding-left: calc(60px - #{$padding-container-m});
-
-    @include media-sm {
-      padding-left: 0;
-      margin: auto;
-    }
   }
 
   &__link {
@@ -92,6 +89,7 @@ $transition-delay: 0.4s;
 
 .desktop-menu {
   display: none;
+  border-color: inherit;
   flex-direction: row;
   justify-content: space-around;
   width: 33%;
@@ -99,10 +97,37 @@ $transition-delay: 0.4s;
   @include media-lg {
     display: flex;
   }
-}
 
-.text--menu {
-  @extend .text;
-  color: $color-white;
-  font-weight: 500;
+  &__text {
+    border-color: inherit;
+    color: inherit;
+    font-weight: 500;
+    position: relative;
+
+    &::after {
+      content: "";
+      border-top: 1px solid;
+      border-color: inherit;
+      bottom: 1px;
+      height: 0;
+      left: 0;
+      transition: width 0.25s linear;
+      position: absolute;
+      width: 0;
+    }
+
+    &:hover {
+      &::after {
+        width: 66%;
+      }
+    }
+
+    &--active {
+      @extend .desktop-menu__text;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
 }

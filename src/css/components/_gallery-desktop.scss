@@ -1,0 +1,18 @@
+.gallery-desktop {
+  display: none;
+
+  @include media-lg {
+    display: grid;
+  }
+
+  align-items: start;
+  justify-content: center;
+  column-gap: 2%;
+  grid-template-columns: repeat(4, 1fr);
+
+  &__column {
+    row-gap: 2%;
+    display: grid;
+    grid-template-columns: 100%;
+  }
+}

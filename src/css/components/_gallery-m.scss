@@ -1,0 +1,17 @@
+.gallery-m {
+  @include media-lg {
+    display: none;
+  }
+
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2%;
+  justify-content: center;
+
+  &__column {
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 2%;
+  }
+}

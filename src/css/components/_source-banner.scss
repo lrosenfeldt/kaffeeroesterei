@@ -1,50 +1,84 @@
 @import "variables";
 
 .source-banner {
-	align-items: center;
-	background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/fend-coffee-bags-2_mini.jpg);
-	background-origin: border-box;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	display: flex;
-	height: 50%;
-	justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(/images/fend-coffee-bags-2_mini.jpg);
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  height: 50%;
+  justify-content: center;
 
-	@include media-sm {
-		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/fend-coffee-bags-2_sm.jpg);
-	}
+  @include media-sm {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(/images/fend-coffee-bags-2_sm.jpg);
+  }
 
-	@include media-md {
-		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/fend-coffee-bags-2_md.jpg);
-	}
+  @include media-md {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(/images/fend-coffee-bags-2_md.jpg);
+  }
 
-	@include media-lg {
-		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/fend-coffee-bags-2_lg.jpg);
-	}
+  @include media-lg {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(/images/fend-coffee-bags-2_lg.jpg);
+  }
 
-	@include media-xl {
-		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/fend-coffee-bags-2_xl.jpg);
-	}
+  @include media-xl {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(/images/fend-coffee-bags-2_xl.jpg);
+  }
 
-	@include media-xxl {
-		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/fend-coffee-bags-2.jpg);
-	}
+  @include media-xxl {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(/images/fend-coffee-bags-2.jpg);
+  }
 
-	&__text {
-		color: $color-white;
-		margin-bottom: 12px;
-		text-align: center;	
-		
-		&--link {
-			@extend .source-banner__text;
-			display: block;
-			margin: auto;	
-			margin-bottom: 0;
-		}	
-	}
+  &__text {
+    color: $color-white;
+    margin-bottom: 12px;
+    text-align: center;
 
-	&__grouping {
-		width: calc(64% + 2*#{$padding-container-m});
-	}
+    &--link {
+      @extend .source-banner__text;
+      display: block;
+      margin: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  &__grouping {
+    width: 241px;
+
+    @include media-lg {
+      width: 306px;
+    }
+  }
 }

@@ -1,69 +1,75 @@
 @import "variables";
 
 .info-box {
-	align-items: flex-start;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
-	@include media-md {
-		flex-direction: row;
-		justify-content: space-between;	
-	}
+  @include media-md {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-	&--padded {
-		@extend .info-box;
-		padding-top: 40px;	
-	}
+  &--padded {
+    @extend .info-box;
+    padding-top: 40px;
+  }
 
-	&__textbox {
+  &__textbox {
+    @include media-md {
+      width: 42%;
+    }
 
-		@include media-md {
-			width: 46%;
-		}
-	}
+    &--centered {
+      @extend .info-box__textbox;
+      align-self: center;
+    }
+  }
 
-	&__image-container {
-		align-self: flex-end;
-		padding-top: 40px;
-		width: calc(64vw + 2*#{$padding-container-m});
+  &__image-container {
+    align-self: flex-end;
+    padding-top: 40px;
+    width: 79%;
 
-		@include media-md {
-			align-self: auto;
-			padding-left: 3%;
-		}
+    @include media-md {
+      align-self: auto;
+      padding-top: 0;
+      padding-left: 3%;
+      width: 42%;
+    }
 
-		&--reverse {
-		@extend .info-box__image-container;
-		align-self: flex-start;	
-		
-			@include media-md {
-				order: -1;		
-				padding-left: 0;
-				padding-right: 3%;
-			}	
-		}
-	}
+    &--reverse {
+      @extend .info-box__image-container;
+      align-self: flex-start;
+
+      @include media-md {
+        order: -1;
+        padding-left: 0;
+        padding-right: 3%;
+      }
+    }
+  }
 }
 
 .mini-text-box {
-	align-items: flex-start;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 
-	&__text {
-		padding-top: 20px;
-		width: 138px;
+  &__text {
+    padding-top: 20px;
+    width: 138px;
 
-		@include media-lg {
-			width: 174px;
-		}
+    @include media-lg {
+      width: 174px;
+    }
 
-		&--spacer {
-			@extend .mini-text-box__text;
-			margin-right: 20px;
-		}
-	}
+    &--spacer {
+      @extend .mini-text-box__text;
+      margin-right: 20px;
+    }
+  }
 }

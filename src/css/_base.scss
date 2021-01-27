@@ -3,100 +3,108 @@
 
 // basic settings
 * {
-	margin: 0;
-	padding: 0;
-	font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
 }
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 // standard typography, basic settings
 body {
-	height: 100vh;
-	width: 100vw;
-	margin: 0;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
 }
 
 .text {
-	font-family: $font-family;
-	font-size: $font-size-m;
-	font-weight: $font-weight;
-	line-height: $line-height-text;
-	text-decoration: $font-text-decoration;
-	
-	@include media-lg {
-		font-size: $font-size;
-	}
+  font-family: $font-family;
+  font-size: $font-size-m;
+  font-weight: $font-weight;
+  line-height: $line-height-text;
+  text-decoration: $font-text-decoration;
+
+  @include media-lg {
+    font-size: $font-size;
+  }
 }
 
 .heading {
-	font-weight: $heading-weight;
-	line-height: $line-height-heading;
-	text-decoration: $font-text-decoration;
+  font-weight: $heading-weight;
+  line-height: $line-height-heading;
+  text-decoration: $font-text-decoration;
 }
 
 .h1 {
-	@extend .heading;
-	font-size: $h1-size;
-
+  @extend .heading;
+  font-size: $h1-size;
 }
 
 .h2 {
-	@extend .heading;
-	font-size: $h2-size-m;
-	padding-bottom: 20px;
+  @extend .heading;
+  font-size: $h2-size-m;
+  padding-bottom: 20px;
 
-	@include media-lg {
-		font-size: $h2-size;
-	}
+  @include media-lg {
+    font-size: $h2-size;
+  }
 }
 
 .h3 {
-	@extend .heading;
-	font-size: $h3-size-m;
-	padding-bottom: 12px;
+  @extend .heading;
+  font-size: $h3-size-m;
+  padding-bottom: 12px;
 
-	@include media-lg {
-		font-size: $h3-size;
-	}
+  @include media-lg {
+    font-size: $h3-size;
+  }
 }
 
 .subhead-m {
-	font-family: $font-family;
-	font-size: $subhead-size;
-	font-weight: $font-weight;
-	line-height: $line-height-text;
-	text-decoration: $font-text-decoration;
+  font-family: $font-family;
+  font-size: $subhead-size;
+  font-weight: $font-weight;
+  line-height: $line-height-text;
+  text-decoration: $font-text-decoration;
 }
 
 .container {
-	box-sizing: border-box;
-	padding-left: $padding-container-m;
-	padding-right: $padding-container-m;
-	width: 100%;
+  box-sizing: border-box;
+  padding-left: $padding-container-m;
+  padding-right: $padding-container-m;
+  width: 100%;
 
-	@include media-md {
-		padding-left: 50px;
-		padding-right: 50px;
-	}
+  @include media-md {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 
-	&--padded {
-		@extend .container;
-		padding-top: $padding-container-top-m;	
-		padding-bottom: $padding-container-top-m;	
-	}
+  @media (min-width: 1440px) {
+    padding-left: calc((100% - (1440px - 2 * 100px)) / 2);
+    padding-right: calc((100% - (1440px - 2 * 100px)) / 2);
+  }
+
+  &--padded {
+    @extend .container;
+    padding-top: $padding-container-top-m;
+    padding-bottom: $padding-container-top-m;
+  }
+
+  &--map {
+    box-sizing: border-box;
+    padding: 0;
+  }
 }
 
 .image {
-	display: block;
-	height: auto;
-	width: 100%;
+  display: block;
+  height: auto;
+  width: 100%;
 
-	&--inverted{
-		@extend .image;
-		filter: invert(1);
-	}
+  &--inverted {
+    @extend .image;
+    filter: invert(1);
+  }
 }
-

@@ -19,25 +19,19 @@
 
 // example use for media query
 .example {
+  @include media-sm {
+    // font-size: 1px
+  }
 
-	@include media-sm {
-		// font-size: 1px
-	}
+  @include media-md {
+  }
 
-	@include media-md {
+  @include media-lg {
+  }
 
-	}
+  @include media-xl {
+  }
 
-	@include media-lg {
-
-	}
-
-	@include media-xl {
-
-	}
-
-	@include media-xxl {
-
-	}
-
+  @include media-xxl {
+  }
 }

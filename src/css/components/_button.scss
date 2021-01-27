@@ -1,34 +1,75 @@
 @import "variables";
 
 .button {
-	background-color: $color-anthrazit;
-	border-radius: 5px;
-	border: 2px solid $color-anthrazit;
-	box-sizing: border-box;
-	cursor: pointer;
-	display: block;
-	padding: 15px 50px;
-	text-align: center;
-	transition-duration: 0.5s;
-	transition-timing-function: linear;
+  background-color: $color-anthrazit;
+  border-radius: 5px;
+  border-style: none;
+  box-sizing: border-box;
+  color: $color-white;
+  cursor: pointer;
+  display: block;
+  padding: 0;
+  position: relative;
+  position: relative;
+  text-align: center;
 
-	&:hover {
-		background-color: $color-medium-grey;
-		border: 2px solid $color-medium-grey;
-	}
+  // reset browser default
+  &:focus {
+    outline: none;
+  }
 
-	&:active {
-		background-color: $color-kraftpapier;
-		border: 2px solid $color-kraftpapier;
-	}
+  &::after {
+    background-color: $color-medium-grey;
+    content: "";
+    border-radius: 5px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: width 0.5s linear;
+    width: 0;
+    z-index: 5;
+  }
 
-	&--light-border {
-		@extend .button;	
-		// for development purposes
-		border: 3px solid $color-white;
-	}
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
 
-	&__text {	
-		color: $color-white;
-	}
+  &:active {
+    &::after {
+      background-color: $color-kraftpapier;
+    }
+  }
+
+  &--light {
+    @extend .button;
+    background-color: $color-white;
+    border: 3px solid black;
+    color: black;
+
+    &::after {
+      background-color: black;
+      border-radius: 0;
+    }
+
+    &:hover {
+      color: $color-white;
+      transition: color 0.5s linear;
+      transition-delay: 0.05s;
+    }
+
+    &:active {
+      border-color: $color-kraftpapier;
+    }
+  }
+
+  &__text {
+    color: inherit;
+    display: block;
+    padding: 15px 50px;
+    position: relative;
+    z-index: 10;
+  }
 }

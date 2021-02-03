@@ -24,6 +24,7 @@
   &__textbox {
     &--centered {
       @extend .info-box__textbox;
+      max-width: 662px;
 
       @include media-md {
         justify-self: center;
@@ -38,6 +39,13 @@
       @include media-md {
         align-self: start;
       }
+    }
+  }
+
+  &--single {
+    @extend .info-box;
+    @include media-md {
+      grid-template-columns: 1fr;
     }
   }
 

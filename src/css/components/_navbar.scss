@@ -124,8 +124,6 @@ $transition-delay: 0.4s;
     }
 
     &--active {
-      @extend .desktop-menu__text;
-
       &::after {
         width: 100%;
       }

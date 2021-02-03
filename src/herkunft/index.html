@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="../css/main.scss" />
     <title>Rustica - Kaffeerösterei</title>
     <header class="container header--source">
-      <include src="navbar.html"></include>
+      <include
+        src="navbar.html"
+        locals='{ "herkunftactive": "desktop-menu__text--active"}'
+      ></include>
     </header>
   </head>
   <body>
     <div class="container--padded">
       <section class="info-box">
-        <div class="info-box__textbox">
+        <div class="info-box__textbox--top-centered">
           <h3 class="h3">Die Anbaugebiete</h3>
           <p class="text">
             Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und
@@ -29,7 +32,9 @@
             Blindtexte beherrscht – ein geradezu unorthographisches Leben.
           </p>
         </div>
-        <div class="info-box__image-container">
+        <div
+          class="info-box__image-container info-box__image-container--pushed-down"
+        >
           <picture>
             <source
               media="(min-width: 1920px)"
@@ -60,7 +65,7 @@
         </div>
       </section>
       <section class="info-box--padded">
-        <div class="info-box__textbox">
+        <div class="info-box__textbox--top-centered">
           <h3 class="h3">Das Wohl der Kaffeebauern</h3>
           <p class="text">
             Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und
@@ -73,7 +78,9 @@
             Blindtexte beherrscht – ein geradezu unorthographisches Leben.
           </p>
         </div>
-        <div class="info-box__image-container--reverse">
+        <div
+          class="info-box__image-container--reverse info-box__image-container--pushed-down"
+        >
           <picture>
             <source
               media="(min-width: 1920px)"

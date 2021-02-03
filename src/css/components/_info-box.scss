@@ -1,52 +1,68 @@
 @import "variables";
 
 .info-box {
-  align-items: flex-start;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  justify-items: center;
+  row-gap: 40px;
 
   @include media-md {
-    flex-direction: row;
-    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 8%;
   }
 
   &--padded {
     @extend .info-box;
     padding-top: 40px;
+
+    @include media-md {
+      padding-top: 100px;
+    }
   }
 
   &__textbox {
-    @include media-md {
-      width: 42%;
-    }
-
     &--centered {
       @extend .info-box__textbox;
-      align-self: center;
+
+      @include media-md {
+        justify-self: center;
+        align-self: center;
+        padding: 0 50px;
+      }
+    }
+
+    &--top-centered {
+      @extend .info-box__textbox--centered;
+
+      @include media-md {
+        align-self: start;
+      }
     }
   }
 
   &__image-container {
-    align-self: flex-end;
-    padding-top: 40px;
+    justify-self: end;
     width: 79%;
 
     @include media-md {
-      align-self: auto;
-      padding-top: 0;
-      padding-left: 3%;
-      width: 42%;
+      width: auto;
+      justify-self: start;
     }
 
     &--reverse {
       @extend .info-box__image-container;
-      align-self: flex-start;
+      justify-self: start;
 
       @include media-md {
+        justify-self: end;
         order: -1;
-        padding-left: 0;
-        padding-right: 3%;
+      }
+    }
+
+    &--pushed-down {
+      @include media-md {
+        padding-top: 70px;
       }
     }
   }

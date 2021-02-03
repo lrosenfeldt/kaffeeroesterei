@@ -2,9 +2,17 @@
   display: block;
   height: 35px;
   width: 35px;
+  filter: invert(1);
 
   &--black {
     @extend .logo;
-    filter: invert(1);
+    filter: invert(0);
+  }
+}
+
+.logo--footer {
+  @include media-lg {
+    height: 70px;
+    width: 70px;
   }
 }

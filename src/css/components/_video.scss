@@ -1,0 +1,13 @@
+.video {
+  height: auto;
+  width: 100%;
+  padding-top: 56px;
+
+  @include media-lg {
+    padding-top: 126px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

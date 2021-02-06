@@ -12,6 +12,11 @@ $transition-delay: 0.4s;
   justify-content: space-between;
   padding-top: 10px;
   width: 100%;
+
+  &--black {
+    @extend .navbar;
+    color: black;
+  }
 }
 
 .burger-menu {

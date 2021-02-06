@@ -8,7 +8,7 @@
   color: $color-white;
   cursor: pointer;
   display: block;
-  padding: 0;
+  padding: 15px 50px;
   position: relative;
   position: relative;
   text-align: center;
@@ -68,7 +68,7 @@
   &__text {
     color: inherit;
     display: block;
-    padding: 15px 50px;
+    padding: 0;
     position: relative;
     z-index: 10;
   }

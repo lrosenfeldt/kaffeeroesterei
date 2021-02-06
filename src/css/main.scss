@@ -10,14 +10,15 @@
 @import "components/navbar";
 @import "components/video";
 // page sections
-@import "components/header";
-@import "components/info-box";
 @import "components/coffee-display";
-@import "components/source-banner";
+@import "components/contact-form";
 @import "components/featured-product";
-@import "components/os-map";
 @import "components/footer";
+@import "components/header";
 @import "components/imprint";
+@import "components/info-box";
+@import "components/os-map";
+@import "components/source-banner";
 
 // example use for media query
 .example {

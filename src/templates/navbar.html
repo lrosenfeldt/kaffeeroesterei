@@ -1,9 +1,12 @@
-<nav class="navbar">
-  <a class="logo" href="/index.html">
+<nav class="navbar{{ navbarcolor }}">
+  <a class="logo{{ navbarcolor }}" href="/index.html">
     <img class="image" src="/images/icons/logo_bean.png" alt="/index.html" />
   </a>
   <input class="burger-menu" id="burger-checkbox" type="checkbox" />
-  <label class="burger-menu__label" for="burger-checkbox"></label>
+  <label
+    class="burger-menu__label{{ navbarcolor }}"
+    for="burger-checkbox"
+  ></label>
   <div class="overlay">
     <div class="overlay__linkStack">
       <a class="h3 overlay__link" href="/cafe/index.html">das Café</a>

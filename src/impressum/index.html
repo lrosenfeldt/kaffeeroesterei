@@ -10,18 +10,7 @@
     <link rel="stylesheet" href="../css/main.scss" />
     <title>Rustica - Kaffeerösterei</title>
     <header class="container">
-      <nav class="navbar">
-        <div class="logo--black"></div>
-        <input class="burger-menu" id="burger-checkbox" type="checkbox" />
-        <label class="burger-menu__label--black" for="burger-checkbox"></label>
-        <div class="overlay">
-          <div class="overlay__linkStack">
-            <a class="h3 overlay__link" href="/cafe/index.html">das Café</a>
-            <a class="h3 overlay__link" href="/herkunft/index.html">Herkunft</a>
-            <a class="h3 overlay__link">Shop</a>
-          </div>
-        </div>
-      </nav>
+      <include src="navbar.html" locals='{ "navblack": "navbar--black" }' />
     </header>
   </head>
   <body>

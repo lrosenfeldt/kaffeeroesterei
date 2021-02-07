@@ -3,6 +3,13 @@
 $checkbox-size: 20px;
 $checkbox-margin: 12px;
 
+.contact-container {
+  @include media-lg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16%;
+  }
+}
 .contact-form {
   &__label {
     display: block;

@@ -1,15 +1,14 @@
 @import "variables";
+$border-size: 3px;
 
 .button {
   background-color: $color-anthrazit;
   border-radius: 5px;
   border-style: none;
-  box-sizing: border-box;
   color: $color-white;
   cursor: pointer;
   display: block;
   padding: 15px 50px;
-  position: relative;
   position: relative;
   text-align: center;
 
@@ -22,6 +21,7 @@
     background-color: $color-medium-grey;
     content: "";
     border-radius: 5px;
+    border-style: none;
     height: 100%;
     left: 0;
     position: absolute;
@@ -51,13 +51,21 @@
 
     &::after {
       background-color: black;
-      border-radius: 0;
+      border-radius: 5px;
+      border: 3px solid none;
+      top: -3px;
+      left: -3px;
+      transition-delay: 0.05s;
     }
 
     &:hover {
       color: $color-white;
       transition: color 0.5s linear;
       transition-delay: 0.05s;
+
+      &::after {
+        border: 3px solid black;
+      }
     }
 
     &:active {

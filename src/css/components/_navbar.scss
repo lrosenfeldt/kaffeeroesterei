@@ -1,7 +1,7 @@
 @import "variables";
 // local variables
-$transition-duration: 0.5s;
-$transition-delay: 0.4s;
+$transition-duration: 0.25s;
+$transition-delay: 0.1s;
 
 .navbar {
   align-items: flex-start;
@@ -21,29 +21,33 @@ $transition-delay: 0.4s;
 }
 
 .burger-menu {
-  display: none;
+  border: none;
+  background-color: transparent;
+  background-image: url(/images/icons/burger_menu.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 35px;
+  position: relative;
+  transition-delay: calc(#{$transition-duration} - #{$transition-delay});
+  transition-duration: $transition-duration;
+  width: 35px;
+  z-index: 100;
+  &:focus {
+    border: 1px dashed $color-white;
+  }
+  &--black {
+    @extend .burger-menu;
+    filter: invert(1);
+  }
 
-  &__label {
-    background-image: url(/images/icons/burger_menu.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: block;
-    height: 35px;
-    position: relative;
-    transition-delay: calc(#{$transition-duration} - #{$transition-delay});
-    transition-duration: $transition-delay;
-    width: 35px;
-    z-index: 100;
+  &--clicked {
+    background-image: url(/images/icons/close_x.png);
+  }
 
-    &--black {
-      @extend .burger-menu__label;
-      filter: invert(1);
-    }
-
-    @include media-lg {
-      display: none;
-    }
+  @include media-lg {
+    display: none;
   }
 }
 
@@ -57,10 +61,14 @@ $transition-delay: 0.4s;
   left: 100vw;
   position: absolute;
   top: 0;
-  transition-duration: 0.5s;
+  transition-duration: $transition-duration;
   transition-timing-function: linear;
   width: 100vw;
   z-index: 50;
+
+  &--visible {
+    left: 0;
+  }
 
   &__linkStack {
     padding-left: calc(60px - #{$padding-container-m});
@@ -75,21 +83,6 @@ $transition-delay: 0.4s;
 
   @include media-lg {
     display: none;
-  }
-}
-
-#burger-checkbox:checked {
-  & ~ .burger-menu__label {
-    background-image: url(/images/icons/close_x.png);
-  }
-
-  & ~ .burger-menu__label--black {
-    background-image: url(/images/icons/close_x.png);
-    filter: invert(0);
-  }
-
-  & ~ .overlay {
-    left: 0;
   }
 }
 

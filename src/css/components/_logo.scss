@@ -2,11 +2,12 @@
   display: block;
   height: 35px;
   width: 35px;
-  filter: invert(1);
+  transition: filter 0.25s linear;
+  transition-delay: 0.1s;
+  filter: invert(0);
 
-  &--black {
-    @extend .logo;
-    filter: invert(0);
+  &--light {
+    filter: invert(1);
   }
 }
 

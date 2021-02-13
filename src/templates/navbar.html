@@ -1,24 +1,30 @@
-<nav class="container navbar">
-  <a class="logo" href="/index.html">
+<nav class="container navbar {{ navbarColor }}">
+  <a class="logo {{ logoColor }}" href="/index.html">
     <img class="image" src="/images/icons/logo_bean.png" alt="/index.html" />
   </a>
-  <button class="burger-menu"></button>
+  <button class="burger-menu {{ burgerMenuColor }}"></button>
   <div class="overlay">
     <div class="overlay__linkStack">
       <a class="h3 overlay__link" href="/cafe/index.html">das Café</a>
       <a class="h3 overlay__link" href="/herkunft/index.html">Herkunft</a>
-      <a class="h3 overlay__link" href="index.html">Shop</a>
+      <a class="h3 overlay__link">Shop</a>
+      <a class="h3 overlay__link" href="/kontakt/index.html">Kontakt</a>
     </div>
   </div>
   <div class="desktop-menu">
-    <a class="text desktop-menu__text {{ cafeactive }}" href="/cafe/index.html"
+    <a class="text desktop-menu__text {{ cafeActive }}" href="/cafe/index.html"
       >das Café</a
     >
     <a
-      class="text desktop-menu__text {{ herkunftactive }}"
+      class="text desktop-menu__text {{ herkunftActive }}"
       href="/herkunft/index.html"
       >Herkunft</a
     >
-    <a class="text desktop-menu__text {{ shopactive }}">Shop</a>
+    <a class="text desktop-menu__text {{ shopActive }}">Shop</a>
+    <a
+      class="text desktop-menu__text {{ contactActive }}"
+      href="/kontakt/index.html"
+      >Kontakt</a
+    >
   </div>
 </nav>

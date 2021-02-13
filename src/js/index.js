@@ -37,6 +37,7 @@ burgerMenu.addEventListener("click", function () {
 
 const options = {
   root: null,
+  rootMargin: "0px 0px -95% 0px",
 };
 
 function darkNavbar() {
@@ -51,14 +52,19 @@ function lightNavbar() {
   burgerMenu.classList.add("burger-menu--light");
 }
 
+const notAnyIntersection = (entries) => {
+  return entries.reduce((accumulator, currentValue) => {
+    return !currentValue.isIntersecting === accumulator;
+  }, true);
+};
+
 const observer = new IntersectionObserver(function (entries, observer) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      lightNavbar();
-    } else {
-      darkNavbar();
-    }
-  });
+  if (notAnyIntersection(entries)) {
+    darkNavbar();
+  } else {
+    lightNavbar();
+  }
 }, options);
 
 observer.observe(header);
+observer.observe(coffeeDisplay);

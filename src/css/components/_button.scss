@@ -14,7 +14,7 @@ $border-size: 3px;
 
   // reset browser default
   &:focus {
-    outline: none;
+    outline: 3px solid $color-orange;
   }
 
   &::after {

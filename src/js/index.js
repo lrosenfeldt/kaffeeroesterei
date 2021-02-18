@@ -9,6 +9,9 @@
 import { doc } from "prettier";
 import Dropdown from "./dropdown";
 import initDarkSectionObserver from "./darkSectionObserver";
+import enableBurgerMenu from "./burgeMenu";
+
+enableBurgerMenu();
 
 const elementsToBeObserved = [
   document.querySelector(".header"),
@@ -16,7 +19,6 @@ const elementsToBeObserved = [
   document.querySelector(".gallery-m"),
   document.querySelector(".gallery-desktop"),
 ];
-
 initDarkSectionObserver(elementsToBeObserved);
 
 const dropdownButton = document.querySelector(".dropdown__button");

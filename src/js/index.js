@@ -10,6 +10,7 @@ import { doc } from "prettier";
 import Dropdown from "./dropdown";
 import initDarkSectionObserver from "./darkSectionObserver";
 import enableBurgerMenu from "./burgeMenu";
+import ContactForm from "./contactForm";
 
 enableBurgerMenu();
 
@@ -27,4 +28,9 @@ if (dropdownButton && dropdownListbox) {
   new Dropdown(dropdownButton, dropdownListbox);
 } else {
   console.warn("no dropdown found");
+}
+
+const formNode = document.forms["contact-form"];
+if (formNode) {
+  new ContactForm(formNode);
 }

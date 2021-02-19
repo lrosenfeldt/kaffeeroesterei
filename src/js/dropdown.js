@@ -20,7 +20,7 @@ class Dropdown {
   }
 
   onFocusChange(focusedItem) {
-    this.button.innerText = `Betreff: ${focusedItem.innerText}`;
+    this.button.innerText = `Dein Betreff: ${focusedItem.innerText}`;
   }
 
   focusItem(element) {

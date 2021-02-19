@@ -11,6 +11,7 @@ import Dropdown from "./dropdown";
 import initDarkSectionObserver from "./darkSectionObserver";
 import enableBurgerMenu from "./burgeMenu";
 import ContactForm from "./contactForm";
+import "./hiddenPricelist";
 
 enableBurgerMenu();
 

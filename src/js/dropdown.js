@@ -190,6 +190,13 @@ class Dropdown {
     }
   }
 
+  checkClickItem(event) {
+    if (event.target.getAttribute("role") !== "option") {
+      return;
+    }
+    this.focusItem(event.target);
+  }
+
   registerListboxEvents() {
     this.listboxNode.addEventListener("keydown", this.checkKeyPress.bind(this));
   }
@@ -227,6 +234,7 @@ class Dropdown {
     this.button.addEventListener("keyup", this.checkShow.bind(this));
     this.listboxNode.addEventListener("blur", this.hideListbox.bind(this));
     this.listboxNode.addEventListener("keydown", this.checkKeyPress.bind(this));
+    this.listboxNode.addEventListener("click", this.checkClickItem.bind(this));
   }
 }
 

@@ -1,12 +1,13 @@
 /* eslint-disable no-useless-return */
 class Dropdown {
-  constructor(button, listboxNode) {
+  constructor(button, listboxNode, buttonText) {
     this.button = button;
     this.listboxNode = listboxNode;
     this.activeDescendant = this.listboxNode.getAttribute(
       "aria-activedescendant"
     );
     this.keysSoFar = "";
+    this.buttonText = buttonText;
     this.registerEvents();
   }
 
@@ -20,7 +21,7 @@ class Dropdown {
   }
 
   onFocusChange(focusedItem) {
-    this.button.innerText = `Dein Betreff: ${focusedItem.innerText}`;
+    this.button.innerText = `${this.buttonText} ${focusedItem.innerText}`;
   }
 
   focusItem(element) {

@@ -14,6 +14,47 @@
   min-height: 550px;
 }
 
+.shop--filled {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.shop-heading {
+  padding-top: 270px;
+}
+
+.product {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.product__image-box {
+  background-color: $color-light-grey;
+  margin-bottom: 20px;
+}
+
+.product__name {
+  color: black;
+  margin-bottom: 7px;
+}
+
+.product__price {
+  color: $color-medium-grey;
+  margin-bottom: 7px;
+}
+
+.product__tag-row {
+  column-gap: 11px;
+  display: grid;
+  grid-template-columns: repeat(15, 14px);
+}
+
+.product__tag {
+  height: 14px;
+  width: 14px;
+}
+
 .spinner-wrapper {
   column-gap: 10px;
   display: grid;
@@ -55,7 +96,4 @@
   &::after {
     animation-delay: 0.4s;
   }
-}
-
-.shop__product {
 }

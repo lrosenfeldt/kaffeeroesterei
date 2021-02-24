@@ -7,11 +7,9 @@
 // console.log(result);
 
 import { doc } from "prettier";
-import Dropdown from "./dropdown";
 import initDarkSectionObserver from "./darkSectionObserver";
 import enableBurgerMenu from "./burgeMenu";
-import ContactForm from "./contactForm";
-import "./hiddenPricelist";
+import initShop from "./shop";
 
 enableBurgerMenu();
 
@@ -23,15 +21,4 @@ const elementsToBeObserved = [
 ];
 initDarkSectionObserver(elementsToBeObserved);
 
-const dropdownButton = document.querySelector(".dropdown__button");
-const dropdownListbox = document.querySelector(".dropdown__list");
-if (dropdownButton && dropdownListbox) {
-  new Dropdown(dropdownButton, dropdownListbox);
-} else {
-  console.warn("no dropdown found");
-}
-
-const formNode = document.forms["contact-form"];
-if (formNode) {
-  new ContactForm(formNode);
-}
+initShop();

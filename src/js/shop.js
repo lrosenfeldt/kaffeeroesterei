@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-return */
 import products from "./products.json";
 import productImages from "../images/products/*.png";
 import productTags from "../images/products/tags/*.png";
@@ -19,11 +20,13 @@ function formattedPrice(product) {
 function fillTemplate(product) {
   return `
     <div class="product">
-    <img
-      class="image product__image-box"
-      src="${productImages[product.image]}"
-      alt="Eine Packung unserers Kaffess ${product.productName}"
-    />
+    <a href="/produkt/index.html?id=${product.id}">
+      <img
+        class="image product__image-box"
+        src="${productImages[product.image]}"
+        alt="Eine Packung unserers Kaffess ${product.productName}"
+      />
+    </a>
     <p class="subhead-m product__name">${product.productName}</p>
     <p class="text product__price">${formattedPrice(product)}</p>
     <div class="product__tag-row">
@@ -52,10 +55,7 @@ function populateShop() {
 }
 
 function initShop() {
-  // simulate loading
-  console.log("test");
-  console.log(productImages);
-  setTimeout(populateShop, 1000);
+  populateShop();
 }
 
 export default initShop;

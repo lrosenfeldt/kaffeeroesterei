@@ -9,79 +9,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/main.scss" />
-    <include src="navbar.html"></include>
+    <include src="navbar.html">
+      { "shopActive": "desktop-menu__text--active" }
+    </include>
   </head>
   <body>
     <div class="container--padded product-showcase">
-      <div class="product-showcase__image-container">
-        <img
-          class="image"
-          src="/images/products/fend-coffee-costa-rica-2.png"
-        />
-      </div>
-      <div class="showcase-info">
-        <h2 class="text h2 showcase-info__heading">Costa Rica</h2>
-        <p class="text showcase-info__price">6,90€</p>
-        <p class="text showcase-info__text">
-          Costa Rica Filterkaffee ist äußerst ergiebig und hat praktisch keine
-          Säure. Den Gaumen umschmeichelt ein vollmundiges Haselnussaroma.
-          Gleich probieren!
-        </p>
-        <div class="dropdown showcase-info__dropdown">
-          <button
-            aria-haspopup="listbox"
-            aria-labelledby="dropdown__button"
-            class="text dropdown__button"
-            id="subject-dropdown"
-            type="button"
-            aria-required="true"
-            aria-invalid="false"
-            tabindex="6"
-          >
-            Wie viel Kaffee brauchst du?
-          </button>
-          <ul
-            class="text dropdown__list dropdown__list--hidden"
-            id="subject-listbox"
-            tabindex="-1"
-            role="listbox"
-            aria-labelledby="dropdown__button"
-            aria-expanded="false"
-          >
-            <li class="dropdown__list-item" id="option-shipping" role="option">
-              250g gemahlen
-            </li>
-            <li class="dropdown__list-item" id="option-produkt" role="option">
-              500g gemahlen
-            </li>
-            <li class="dropdown__list-item" id="option-sales" role="option">
-              250g Bohnen
-            </li>
-            <li class="dropdown__list-item" id="option-misc" role="option">
-              500g Bohnen
-            </li>
-          </ul>
-        </div>
-        <button class="button showcase-info__button">
-          <span class="text button__text">Warenkorb</span>
-        </button>
-        <div class="showcase-info__tag-grid">
-          <img
-            class="showcase-info__tag"
-            src="/images/products/tags/icon_coffee_beans.png"
-          />
-          <img
-            class="showcase-info__tag"
-            src="/images/products/tags/icon_coffee_french-press.png"
-          />
-          <img
-            class="showcase-info__tag"
-            src="/images/products/tags/icon_coffee_shovel.png"
-          />
-          <p class="text">Mild</p>
-          <p class="text">Für Filterkaffee</p>
-          <p class="text">gemahlen</p>
-        </div>
+      <div class="spinner-wrapper">
+        <div class="spinner spinner--delay-2"></div>
+        <div class="spinner spinner--delay-1"></div>
+        <div class="spinner"></div>
       </div>
     </div>
     <section class="container--padded product-description">

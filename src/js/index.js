@@ -9,7 +9,6 @@
 import { doc } from "prettier";
 import initDarkSectionObserver from "./darkSectionObserver";
 import enableBurgerMenu from "./burgeMenu";
-import initShop from "./shop";
 
 enableBurgerMenu();
 
@@ -20,5 +19,3 @@ const elementsToBeObserved = [
   document.querySelector(".gallery-desktop"),
 ];
 initDarkSectionObserver(elementsToBeObserved);
-
-initShop();

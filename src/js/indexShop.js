@@ -1,3 +1,5 @@
 import initShop from "./shop";
 
-initShop();
+window.addEventListener("load", () => {
+  initShop();
+});

@@ -1,13 +1,14 @@
 /* eslint-disable no-useless-return */
+import { doc } from "prettier";
 import products from "./products.json";
 import productImages from "../images/products/*.png";
 import tagImages from "../images/products/tags/*.png";
 
 function pullProduct() {
   const pageURL = new URL(window.location.href);
-  const productId = pageURL.searchParams.get("id");
+  const productId = parseInt(pageURL.searchParams.get("id"), 10);
   // add if-case for product not found
-  return products[productId];
+  return products.find((product) => product.id === productId);
 }
 
 function formattedPrice(price) {
@@ -23,7 +24,9 @@ function variantWeightToText(weight) {
 
 function fillVariantTemplateGrinded(variant) {
   return `
-    <li class="dropdown__list-item" id="option-shipping" role="option">
+    <li class="dropdown__list-item" id="option-shipping" role="option" data-price="${
+      variant.price
+    }" data-weight="${variant.weight}" data-type="ground">
       ${variantWeightToText(variant.weight)} gemahlen – ${formattedPrice(
     variant.price
   )}
@@ -33,7 +36,9 @@ function fillVariantTemplateGrinded(variant) {
 
 function fillVariantTemplateBeans(variant) {
   return `
-    <li class="dropdown__list-item" id="option-shipping" role="option">
+    <li class="dropdown__list-item" id="option-shipping" role="option" data-price="${
+      variant.price
+    }" data-weight="${variant.weight}" data-type="beans">
       ${variantWeightToText(variant.weight)} Bohnen – ${formattedPrice(
     variant.price
   )}
@@ -42,10 +47,16 @@ function fillVariantTemplateBeans(variant) {
   `;
 }
 
-function addHTMLProductVariants(product) {
+function sortVariantsByWeight(product) {
+  return product.variants.sort((variant1, variant2) => {
+    return variant1.weight - variant2.weight;
+  });
+}
+
+function addHTMLProductVariants(variants) {
   return [
-    ...product.variants.map(fillVariantTemplateGrinded),
-    ...product.variants.map(fillVariantTemplateBeans),
+    ...variants.map(fillVariantTemplateGrinded),
+    ...variants.map(fillVariantTemplateBeans),
   ].join("");
 }
 
@@ -81,13 +92,14 @@ function fillTemplate(product) {
   return `
     <div class="product-showcase__image-container">
       <img
-        class="image"
+        class="image";
         src="${productImages[product.image]}"
+        alt="Eine Packung unserers Kaffees ${product.productName}"
       />
     </div>
     <h2 class="text h2 product-showcase__heading">${product.productName}</h2>
     <p class="text product-showcase__price">${formattedPriceRange(product)}</p>
-    <p class="text product-showcase__text">${product.description}</p>
+    <p class="text product-showcase__text">${product.abstract}</p>
     <div class="dropdown product-showcase__dropdown">
       <button
         aria-haspopup="listbox"
@@ -109,16 +121,27 @@ function fillTemplate(product) {
         aria-labelledby="dropdown__button"
         aria-expanded="false"
       >
-        ${addHTMLProductVariants(product)} 
+        ${addHTMLProductVariants(sortVariantsByWeight(product))}
       </ul>
     </div>
     <button class="button product-showcase__button">
       <span class="text button__text">Warenkorb</span>
     </button>
+    <div class="product-showcase__message" id="messageBox">
+      <p class="text"></p>
+    </div> 
     <div class="product-showcase__tag-grid">
       ${addHTMLTagIcons(product.tags)}
     </div>
       `;
+}
+
+function addHTMLDescription(product) {
+  const descriptionElement = document.querySelector(".product-description");
+  descriptionElement.innerHTML = `
+    <h3 class="h3">Beschreibung</h3>
+    <p class="text product-description__text">${product.description}</p>
+  `;
 }
 
 function processProductRequest() {
@@ -127,19 +150,88 @@ function processProductRequest() {
   const productHTML = fillTemplate(product);
   showcase.classList.add("product-showcase--filled");
   showcase.innerHTML = productHTML;
+  addHTMLDescription(product);
 }
 
-function retrieveVariant() {
-  console.log("foo");
+function removeDropdownMessage() {
+  const messageBoxElement = document.getElementById("messageBox");
+  const messageText = messageBoxElement.firstElementChild;
+  messageBoxElement.classList.remove("product-showcase__remove--active");
+  messageText.removeAttribute("role");
+  messageText.textContent = "";
 }
 
-function addToBasket() {
-  console.log("happy");
+function showDropdownMessage(msg, isAlert) {
+  const messageBoxElement = document.getElementById("messageBox");
+  const messageText = messageBoxElement.firstElementChild;
+  messageText.textContent = `${msg}`;
+  if (isAlert) {
+    messageText.setAttribute("role", "alert");
+  }
+  messageBoxElement.classList.add("product-showcase__message--active");
+}
+
+function retrieveSelectedProduct() {
+  const dropdown = document.querySelector(".dropdown");
+  const selectedVariantElement = dropdown.querySelector(
+    '[aria-selected="true"]'
+  );
+  if (!selectedVariantElement) {
+    showDropdownMessage("Gute Wahl! Wie viel Kaffee möchtest du?", true);
+    return null;
+  }
+  removeDropdownMessage();
+  const product = pullProduct();
+  // eslint-disable-next-line consistent-return
+  return {
+    id: product.id,
+    name: product.name,
+    price: selectedVariantElement.dataset.price,
+    weight: selectedVariantElement.dataset.weight,
+    type: selectedVariantElement.dataset.type,
+    quantity: 1,
+  };
+}
+
+function addToCart(selectedProduct) {
+  const cartProducts = JSON.parse(window.localStorage.getItem("products"));
+
+  if (!cartProducts) {
+    const newCart = [selectedProduct];
+    window.localStorage.setItem("products", JSON.stringify(newCart));
+    return;
+  }
+
+  const index = cartProducts.findIndex(
+    (product) =>
+      product.id === selectedProduct.id &&
+      product.weight === selectedProduct.weight &&
+      product.type === selectedProduct.type
+  );
+
+  if (index === -1) {
+    const newCart = [...cartProducts, selectedProduct];
+    window.localStorage.setItem("products", JSON.stringify(newCart));
+    return;
+  }
+
+  const newCart = [...cartProducts];
+  newCart[index].quantity += 1;
+  window.localStorage.setItem("products", JSON.stringify(newCart));
+}
+
+function handleCartButton() {
+  const selectedProduct = retrieveSelectedProduct();
+  if (!selectedProduct) {
+    return;
+  }
+  addToCart(selectedProduct);
+  showDropdownMessage("Hinzugefügt!", false);
 }
 
 function registerEvents() {
   const button = document.querySelector(".product-showcase__button");
-  button.addEventListener("click", addToBasket);
+  button.addEventListener("click", handleCartButton);
 }
 
 function initProductPage() {

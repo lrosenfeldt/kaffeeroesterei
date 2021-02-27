@@ -15,6 +15,8 @@
   height: 47px;
   padding: 14px 10px 14px 25px;
   position: relative;
+  transition-duration: 0.1s;
+  transition-timing-function: linear;
   width: 100%;
 
   &::before {

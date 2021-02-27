@@ -1,12 +1,15 @@
 // color scheme
-$color-anthrazit: #1A1A1A;
-$color-kraftpapier: #D7BE9D;
-$color-light-grey: #E9E9E9;
+$color-anthrazit: #1a1a1a;
+$color-kraftpapier: #d7be9d;
+$color-light-grey: #e9e9e9;
 $color-medium-grey: #737373;
-$color-orange: #D77C12;
-$color-petrol: #006D7E;
-$color-rosa: #EDD1C9;
-$color-white: #FFFFFF;
+$color-orange: #d77c12;
+$color-petrol: #006d7e;
+$color-rosa: #edd1c9;
+$color-white: #ffffff;
+
+// color for background of error messages
+$color-background-error: rgba(255, 0, 0, 0.3);
 
 // general typography
 $font-family: Roboto;
@@ -25,7 +28,6 @@ $font-size-m: 14px;
 $h2-size-m: 36px;
 $h3-size-m: 32px;
 $subhead-size: 18px;
-
 
 // container padding-left/right
 $padding-container-m: 24px;

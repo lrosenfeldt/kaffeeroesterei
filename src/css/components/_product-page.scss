@@ -15,7 +15,7 @@
     "image price ."
     "image description ."
     "image dropdown button"
-    "image tag-grid .";
+    "image tag-grid error";
   grid-template-columns: 4fr 2fr 1fr;
   grid-template-rows: repeat(4, min-content) 1fr;
 }
@@ -52,7 +52,7 @@
 }
 
 .product-showcase__tag {
-  height: 70px;
+  height: 60px;
   margin: auto;
   width: auto;
 }
@@ -72,6 +72,39 @@
   width: 100%;
   box-sizing: border-box;
   height: 48px;
+}
+
+.product-showcase__message {
+  background-color: $color-anthrazit;
+  border-radius: 5px;
+  border: 3px solid $color-anthrazit;
+  box-sizing: border-box;
+  color: $color-white;
+  grid-area: error;
+  margin-top: 12px;
+  padding: 8px 8px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  display: none;
+
+  &--active {
+    display: block;
+  }
+
+  &::after {
+    content: "";
+    background-color: $color-anthrazit;
+    border-left: 3px solid $color-anthrazit;
+    border-top: 3px solid $color-anthrazit;
+    display: block;
+    height: 14px;
+    position: absolute;
+    transform: rotate(0.125turn);
+    width: 14px;
+    top: -11px;
+    left: 10%;
+  }
 }
 
 .product-description {

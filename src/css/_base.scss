@@ -107,6 +107,12 @@ body {
   height: auto;
   width: 100%;
 
+  &--height-first {
+    display: block;
+    height: 100%;
+    width: auto;
+  }
+
   &--inverted {
     @extend .image;
     filter: invert(1);

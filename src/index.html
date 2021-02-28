@@ -64,14 +64,15 @@
       </section>
     </div>
     <section class="container--padded coffee-display">
-      <h2 class="h2 coffee-display__header" id="shop">Entdecke unsere Kaffeesorten</h2>
-      <div class="coffee-display__grouping">
-        <include src="coffee-item.html"></include>
-        <include src="coffee-item.html"></include>
-        <include src="coffee-item.html"></include>
-        <include src="coffee-item.html"></include>
+      <h2 class="h2 coffee-display__header">Entdecke unsere Kaffeesorten</h2>
+      <div class="shop">
+        <div class="spinner-wrapper">
+          <div class="spinner--inverted spinner--delay-2"></div>
+          <div class="spinner--inverted spinner--delay-1"></div>
+          <div class="spinner--inverted"></div>
+        </div>
       </div>
-      <button class="button--light coffee-display__button"><a class="text button__text">alle Produkte</a></button>
+      <button class="button--light coffee-display__button"><a class="text button__text" href="/shop/index.html">alle Produkte</a></button>
     </section>
     <section class="container source-banner">
       <div class="source-banner__grouping">
@@ -115,5 +116,6 @@
     <include src="g-map.html"></include>
     <include src="footer.html"></include>
     <script src="/js/index.js"></script>
+    <script src="/js/indexShopPreview.js"></script>
   </body>
 </html>

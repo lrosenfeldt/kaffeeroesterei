@@ -2,29 +2,39 @@
 
 .coffee-display {
   background-color: $color-anthrazit;
-	padding-left: calc(#{$padding-container-m} - 6px);
-	padding-right: calc(#{$padding-container-m} - 6px);
+  padding-left: calc(#{$padding-container-m} - 6px);
+  padding-right: calc(#{$padding-container-m} - 6px);
 
-	&__grouping {
-		align-items: center;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		width: 100%;
+  &--light {
+    @extend .coffee-display;
+    background-color: $color-white;
+  }
 
-		@include media-lg {
-			justify-content: flex-start;
-			max-width: 1248px;
-			margin: auto;
-		}
-	}
+  &__grouping {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
 
-	&__header {
-		color: $color-white;	
-		padding-bottom: 40px;
-	}
+    @include media-lg {
+      justify-content: flex-start;
+      max-width: 1248px;
+      margin: auto;
+    }
+  }
 
-	&__button {
-		margin: auto;	
-	}
+  &__header {
+    color: $color-white;
+    padding-bottom: 40px;
+
+    &--light {
+      @extend .coffee-display__header;
+      color: black;
+    }
+  }
+
+  &__button {
+    margin: auto;
+  }
 }

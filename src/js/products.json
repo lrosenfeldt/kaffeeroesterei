@@ -107,5 +107,76 @@
     ],
     "abstract": "Costa Rica Filterkaffee ist äußerst ergiebig und hat praktisch keine Säure. Den Gaumen umschmeichelt ein vollmundiges Haselnussaroma. Gleich probieren!",
     "description": "MAYA Hochlandkaffee von MAYA Kaffee 1991 wird an den Hängen der Sierra Madre de Chiapas angebaut, ein Gebirgszug, der sich entlang der Pazifikküste im Süden Mexikos erstreckt. Hier haben sich indianische Kleinbauern mit Anbauflächen von ein bis drei Hektar Land in Kooperativen zusammengeschlossen und verzichten komplett auf Industriedünger und Pestizide. Schonend geröstet, entwickelt diese einzigartige Spezialität ein überraschend vielschichtiges Aromenspiel mit deutlichen Noten von Haselnuss. Als klassischer Aufguss ist unser MAYA Filterkaffee besonders ergiebig. 100% BIO aus kontrolliert ökologischem Anbau. DE-ÖKO-003 / Nicht-EU-Landwirtschaft."
+  },
+    {
+    "id": 3,
+    "productName": "Indien",
+    "image": "fend-coffee-costa-rica-2",
+    "variants": [
+      {
+        "name": "250g",
+        "weight": 250,
+        "price": 740
+      },
+      {
+        "name": "500g",
+        "weight": 500,
+        "price": 1360
+      },
+      {
+        "name": "1000g",
+        "weight": 1000,
+        "price": 2500
+      },
+    ],
+    "tags": [
+      {
+        "name": "Mild",
+        "image": "icon_coffee_beans"
+      },
+      {
+        "name": "Für Filterkaffee",
+        "image": "icon_coffee_french-press"
+      },
+      {
+        "name": "Fair gehandelt",
+        "image": "icon_coffee_shovel"
+      },
+    ],
+    "abstract": "Indien Filterkaffee ist äußerst ergiebig und hat praktisch keine Säure. Den Gaumen umschmeichelt ein vollmundiges Haselnussaroma. Gleich probieren!",
+    "description": "MAYA Hochlandkaffee von MAYA Kaffee 1991 wird an den Hängen der Sierra Madre de Chiapas angebaut, ein Gebirgszug, der sich entlang der Pazifikküste im Süden Mexikos erstreckt. Hier haben sich indianische Kleinbauern mit Anbauflächen von ein bis drei Hektar Land in Kooperativen zusammengeschlossen und verzichten komplett auf Industriedünger und Pestizide. Schonend geröstet, entwickelt diese einzigartige Spezialität ein überraschend vielschichtiges Aromenspiel mit deutlichen Noten von Haselnuss. Als klassischer Aufguss ist unser MAYA Filterkaffee besonders ergiebig. 100% BIO aus kontrolliert ökologischem Anbau. DE-ÖKO-003 / Nicht-EU-Landwirtschaft.",
+  },
+    {
+    "id": 4,
+    "productName": "Costa Rica - Helle Röstung",
+    "image": "fend-coffee-costa-rica-2",
+    "variants": [
+      {
+        "name": "250g",
+        "weight": 250,
+        "price": 750
+      },
+      {
+        "name": "500g",
+        "weight": 500,
+        "price": 1490
+      },
+    ],
+    "tags": [
+      {
+        "name": "Mild",
+        "image": "icon_coffee_beans"
+      },
+      {
+        "name": "Für Filterkaffee",
+        "image": "icon_coffee_french-press"
+      },
+      {
+        "name": "Fair gehandelt",
+        "image": "icon_coffee_shovel"
+      },
+    ],
+    "abstract": "Costa Rica mit milder Röstung Filterkaffee ist äußerst ergiebig und hat praktisch keine Säure. Den Gaumen umschmeichelt ein vollmundiges Haselnussaroma. Gleich probieren!",
+    "description": "MAYA Hochlandkaffee von MAYA Kaffee 1991 wird an den Hängen der Sierra Madre de Chiapas angebaut, ein Gebirgszug, der sich entlang der Pazifikküste im Süden Mexikos erstreckt. Hier haben sich indianische Kleinbauern mit Anbauflächen von ein bis drei Hektar Land in Kooperativen zusammengeschlossen und verzichten komplett auf Industriedünger und Pestizide. Schonend geröstet, entwickelt diese einzigartige Spezialität ein überraschend vielschichtiges Aromenspiel mit deutlichen Noten von Haselnuss. Als klassischer Aufguss ist unser MAYA Filterkaffee besonders ergiebig. 100% BIO aus kontrolliert ökologischem Anbau. DE-ÖKO-003 / Nicht-EU-Landwirtschaft.",
   }
 ]

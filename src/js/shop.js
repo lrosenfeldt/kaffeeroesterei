@@ -3,9 +3,8 @@ import products from "./products.json";
 import productImages from "../images/products/*.png";
 import productTags from "../images/products/tags/*.png";
 
-function addShopGrid() {
-  const shop = document.querySelector(".shop");
-  shop.classList.add("shop--filled");
+function addShopGrid(shop) {
+  shop.classList.add("coffee-display__grouping");
 }
 
 function formattedPrice(product) {
@@ -17,40 +16,47 @@ function formattedPrice(product) {
   );
 }
 
-function fillTemplate(product) {
+function fillTagTemplate(tag) {
   return `
-    <div class="product">
-    <a href="/produkt/index.html?id=${product.id}">
+    <div class="coffee-tag-row__container">
       <img
-        class="image product__image-box"
-        src="${productImages[product.image]}"
-        alt="Eine Packung unserers Kaffess ${product.productName}"
-      />
-    </a>
-    <p class="subhead-m product__name">${product.productName}</p>
-    <p class="text product__price">${formattedPrice(product)}</p>
-    <div class="product__tag-row">
-      <img
-        class="image product__tag"
-        src="/images/icons/icon_coffee_beans.png"
-      />
-      <img
-        class="image product__tag"
-        src="/images/icons/icon_coffee_shovel.png"
-      />
-      <img
-        class="image product__tag"
-        src="/images/icons/icon_coffee_french-press.png"
+        class="image"
+        src="${productTags[tag.image]}"
+        alt="${tag.name}"
       />
     </div>
-  </div>
+  `;
+}
+
+function addHTMLTagIcon(product) {
+  return product.tags.map(fillTagTemplate).join("");
+}
+
+function fillTemplate(product) {
+  return `
+    <div class="coffee-item">
+      <a class="coffee-item__image-box" href="/produkt/index.html?id=${
+        product.id
+      }">
+        <img
+          class="image coffee-item__image"
+          src="${productImages[product.image]}"
+          alt="Eine Packung unserers Kaffess ${product.productName}"
+        />
+      </a>
+      <p class="subhead-m coffee-item__name--light">${product.productName}</p>
+      <p class="text coffee-item__pricetag">${formattedPrice(product)}</p>
+      <div class="coffee-tag-row">
+        ${addHTMLTagIcon(product)}
+      </div>
+    </div>
   `;
 }
 
 function populateShop() {
   const productTemplates = products.map(fillTemplate).join("");
   const shop = document.querySelector(".shop");
-  addShopGrid();
+  addShopGrid(shop);
   shop.innerHTML = productTemplates;
 }
 

@@ -13,7 +13,7 @@
   flex-direction: row;
   justify-content: space-between;
   height: 47px;
-  padding: 14px 10px 14px 25px;
+  padding: 14px 47px 14px 10px;
   position: relative;
   transition-duration: 0.1s;
   transition-timing-function: linear;
@@ -36,6 +36,8 @@
     font-size: 34px;
     transform: rotate(0.25turn);
     transition: transform 0.1s linear;
+    position: absolute;
+    left: calc(100% - 47px / 2);
   }
 
   &:hover {

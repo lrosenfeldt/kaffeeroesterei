@@ -7,7 +7,6 @@
   margin: auto;
 
   &__image-box {
-    background-color: $color-medium-grey;
     margin-bottom: 11px;
     width: 155px;
 
@@ -16,8 +15,16 @@
     }
   }
 
+  &__image {
+    background-color: $color-light-grey;
+  }
+
   &__name {
     color: $color-white;
+
+    &--light {
+      color: black;
+    }
   }
 
   &__pricetag {
@@ -30,10 +37,16 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  padding-top: 5px;
 
   &__container {
     height: $font-size-m;
     width: $font-size-m;
     padding-right: 11px;
+
+    @include media-lg {
+      height: $font-size;
+      width: $font-size;
+    }
   }
 }

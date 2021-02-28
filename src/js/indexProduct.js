@@ -15,3 +15,7 @@ window.addEventListener("load", () => {
   initProductPage();
   initDropdown();
 });
+
+function heppy() {
+  console.log("happy with an e");
+}

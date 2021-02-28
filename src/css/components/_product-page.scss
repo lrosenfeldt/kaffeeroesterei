@@ -6,24 +6,27 @@
 }
 
 .product-showcase--filled {
-  align-items: start;
-  column-gap: 13px;
-  display: grid;
-  row-gap: 0;
-  grid-template-areas:
-    "image heading ."
-    "image price ."
-    "image description ."
-    "image dropdown button"
-    "image tag-grid error";
-  grid-template-columns: 4fr 2fr 1fr;
-  grid-template-rows: repeat(4, min-content) 1fr;
+  @include media-md {
+    align-items: start;
+    column-gap: 13px;
+    display: grid;
+    row-gap: 0;
+    grid-template-areas:
+      "image heading ."
+      "image price ."
+      "image description ."
+      "image dropdown button"
+      "image tag-grid error";
+    grid-template-columns: 4fr 2fr 1fr;
+    grid-template-rows: repeat(4, min-content) 1fr;
+  }
 }
 
 .product-showcase__image-container {
   background-color: $color-kraftpapier;
   grid-area: image;
-  margin-right: 107px;
+  margin-right: 8%;
+  max-width: 300px;
 }
 
 .product-showcase__heading {

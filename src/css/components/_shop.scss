@@ -12,6 +12,10 @@
 
 .shop {
   min-height: 550px;
+
+  &--preview {
+    min-height: none;
+  }
 }
 
 .spinner-wrapper {

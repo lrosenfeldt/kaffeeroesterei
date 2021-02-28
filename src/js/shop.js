@@ -89,15 +89,17 @@ function fillTemplate(product) {
 
 function initShop(numberOfItems = null) {
   let productTemplates = null;
+  let shop = null;
   if (numberOfItems) {
     productTemplates = products
       .slice(0, numberOfItems)
       .map(fillTemplatePreview)
       .join("");
+    shop = document.getElementById("shop-preview");
   } else {
     productTemplates = products.map(fillTemplate).join("");
+    shop = document.getElementById("shop");
   }
-  const shop = document.querySelector(".shop");
   addShopGrid(shop);
   shop.innerHTML = productTemplates;
 }

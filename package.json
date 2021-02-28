@@ -26,5 +26,8 @@
     "posthtml-include": "^1.6.0",
     "prettier": "^2.2.1",
     "sass": "^1.32.0"
+  },
+  "dependencies": {
+    "cart": "^1.0.4"
   }
 }

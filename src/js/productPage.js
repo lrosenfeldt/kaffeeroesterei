@@ -3,6 +3,7 @@ import { doc } from "prettier";
 import products from "./products.json";
 import productImages from "../images/products/*.png";
 import tagImages from "../images/products/tags/*.png";
+import addToCart from "./addToCart";
 
 function pullProduct() {
   const pageURL = new URL(window.location.href);
@@ -22,11 +23,11 @@ function variantWeightToText(weight) {
   return `${weight} g`;
 }
 
-function fillVariantTemplateGrinded(variant) {
+function fillVariantTemplateGrinded(variant, index) {
   return `
-    <li class="dropdown__list-item" id="option-shipping" role="option" data-price="${
-      variant.price
-    }" data-weight="${variant.weight}" data-type="ground">
+    <li class="dropdown__list-item" id="${index}-ground" role="option" data-price="${
+    variant.price
+  }" data-weight="${variant.weight}" data-type="ground">
       ${variantWeightToText(variant.weight)} gemahlen – ${formattedPrice(
     variant.price
   )}
@@ -34,11 +35,11 @@ function fillVariantTemplateGrinded(variant) {
   `;
 }
 
-function fillVariantTemplateBeans(variant) {
+function fillVariantTemplateBeans(variant, index) {
   return `
-    <li class="dropdown__list-item" id="option-shipping" role="option" data-price="${
-      variant.price
-    }" data-weight="${variant.weight}" data-type="beans">
+    <li class="dropdown__list-item" id="${index}-beans" role="option" data-price="${
+    variant.price
+  }" data-weight="${variant.weight}" data-type="beans">
       ${variantWeightToText(variant.weight)} Bohnen – ${formattedPrice(
     variant.price
   )}
@@ -191,33 +192,6 @@ function retrieveSelectedProduct() {
     type: selectedVariantElement.dataset.type,
     quantity: 1,
   };
-}
-
-function addToCart(selectedProduct) {
-  const cartProducts = JSON.parse(window.localStorage.getItem("products"));
-
-  if (!cartProducts) {
-    const newCart = [selectedProduct];
-    window.localStorage.setItem("products", JSON.stringify(newCart));
-    return;
-  }
-
-  const index = cartProducts.findIndex(
-    (product) =>
-      product.id === selectedProduct.id &&
-      product.weight === selectedProduct.weight &&
-      product.type === selectedProduct.type
-  );
-
-  if (index === -1) {
-    const newCart = [...cartProducts, selectedProduct];
-    window.localStorage.setItem("products", JSON.stringify(newCart));
-    return;
-  }
-
-  const newCart = [...cartProducts];
-  newCart[index].quantity += 1;
-  window.localStorage.setItem("products", JSON.stringify(newCart));
 }
 
 function handleCartButton() {

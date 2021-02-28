@@ -22,6 +22,13 @@ $transition-delay: 0.1s;
   }
 }
 
+.navbar__grouping {
+  column-gap: 15px;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+}
+
 .burger-menu {
   border: none;
   background-color: transparent;
@@ -30,16 +37,16 @@ $transition-delay: 0.1s;
   background-repeat: no-repeat;
   background-size: contain;
   display: block;
-  height: 35px;
+  height: 30px;
   position: relative;
   transition-delay: calc(#{$transition-duration} - #{$transition-delay});
   transition-duration: $transition-duration;
-  width: 35px;
-  filter: invert(1);
+  width: 30px;
+  filter: invert(0);
   z-index: 100;
 
   &--light {
-    filter: invert(0);
+    filter: invert(1);
   }
 
   &--clicked {
@@ -48,6 +55,19 @@ $transition-delay: 0.1s;
 
   @include media-lg {
     display: none;
+  }
+}
+
+.cart-icon {
+  @extend .burger-menu;
+  height: 22px;
+  width: 22px;
+  z-index: auto;
+  background-image: url(/images/icons/basket.png);
+
+  &--filled {
+    @extend .cart-icon;
+    background-image: url(/images/icons/basket_filled.png);
   }
 }
 

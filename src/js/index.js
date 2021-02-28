@@ -10,8 +10,6 @@ import { doc } from "prettier";
 import initDarkSectionObserver from "./darkSectionObserver";
 import enableBurgerMenu from "./burgeMenu";
 
-console.log("hello world");
-
 window.addEventListener("load", () => {
   enableBurgerMenu();
 

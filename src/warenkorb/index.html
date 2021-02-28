@@ -8,12 +8,31 @@
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/main.scss" />
+    <link rel="stylesheet" href="/css/main.scss" />
     <include src="navbar.html"> </include>
   </head>
   <body>
-    <include src="g-map.html"></include>
+    <div class="container--padded">
+      <div class="cart-heading-box">
+        <h2 class="h2">Warenkorb</h2>
+        <p class="text">0 Produkte</p>
+      </div>
+      <div class="cart"></div>
+    </div>
+    <div class="container--padded cart__overview">
+      <h2 class="h2 balance-grid__text">Bestellübersicht</h2>
+      <div class="balance-grid">
+        <p class="text balance-grid__text">Zwischensumme</p>
+        <p class="text balance-grid__text" id="balance-products">0,00€</p>
+        <p class="text balance-grid__text">Versandkosten</p>
+        <p class="text balance-grid__text" id="balance-shipping">0,00€</p>
+        <div class="balance-grid__ruler"></div>
+        <p class="text balance-grid__text">Gesamtbetrag</p>
+        <p class="text balance-grid__text" id="balance-total">0,00€</p>
+      </div>
+    </div>
     <include src="footer.html"></include>
     <script src="/js/index.js"></script>
+    <script src="/js/indexCart.js"></script>
   </body>
 </html>

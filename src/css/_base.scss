@@ -35,6 +35,10 @@ body {
   }
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .heading {
   font-weight: $heading-weight;
   line-height: $line-height-heading;

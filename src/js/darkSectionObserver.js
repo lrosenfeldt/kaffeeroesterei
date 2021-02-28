@@ -1,6 +1,7 @@
 const burgerMenu = document.querySelector(".burger-menu");
 const navbar = document.querySelector(".navbar");
 const navbarLogo = document.querySelector(".navbar > .logo");
+const navbarCartIcon = document.querySelector(".cart-icon");
 
 const options = {
   root: null,
@@ -10,12 +11,14 @@ const options = {
 function darkNavbar() {
   navbar.classList.remove("navbar--light");
   navbarLogo.classList.remove("logo--light");
+  navbarCartIcon.classList.remove("burger-menu--light");
   burgerMenu.classList.remove("burger-menu--light");
 }
 
 function lightNavbar() {
   navbar.classList.add("navbar--light");
   navbarLogo.classList.add("logo--light");
+  navbarCartIcon.classList.add("burger-menu--light");
   burgerMenu.classList.add("burger-menu--light");
 }
 

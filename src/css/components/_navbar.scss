@@ -33,6 +33,26 @@ $transition-delay: 0.1s;
   }
 }
 
+.cart-icon {
+  background-color: transparent;
+  background-image: url(/images/icons/basket.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  display: block;
+  filter: invert(0);
+  height: 22px;
+  transition-delay: calc(#{$transition-duration} - #{$transition-delay});
+  transition-duration: $transition-duration;
+  width: 22px;
+
+  &--filled {
+    @extend .cart-icon;
+    background-image: url(/images/icons/basket_filled.png);
+  }
+}
+
 .burger-menu {
   border: none;
   background-color: transparent;
@@ -55,26 +75,6 @@ $transition-delay: 0.1s;
 
   &--clicked {
     background-image: url(/images/icons/close_x.png);
-  }
-}
-
-.cart-icon {
-  background-color: transparent;
-  background-image: url(/images/icons/basket.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  border: none;
-  display: block;
-  filter: invert(0);
-  height: 22px;
-  transition-delay: calc(#{$transition-duration} - #{$transition-delay});
-  transition-duration: $transition-duration;
-  width: 22px;
-
-  &--filled {
-    @extend .cart-icon;
-    background-image: url(/images/icons/basket_filled.png);
   }
 }
 

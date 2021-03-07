@@ -12,10 +12,25 @@
 
   &__grouping {
     align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 41px;
     width: 100%;
+
+    @include media-sm {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 12px;
+    }
+
+    @include media-md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media-lg {
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1248px;
+      margin: auto;
+    }
 
     @include media-lg {
       justify-content: flex-start;

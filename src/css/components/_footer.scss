@@ -1,79 +1,68 @@
-@import "variables";
-
 .footer {
   background-color: black;
+}
 
-  &__grouping {
-    padding-top: 16px;
+.footer__grid {
+  display: grid;
+  grid-template-areas:
+    "title ."
+    "adress opening-hours"
+    "links page-links";
+  justify-items: start;
+  margin-top: 15px;
+  row-gap: 34px;
+  column-gap: 10px;
 
-    @include media-lg {
-      display: flex;
-      justify-content: flex-start;
-    }
+  @include media-md {
+    grid-template-areas:
+      "title  adress opening-hours"
+      ".      links page-links";
   }
 
-  &__grid {
-    column-gap: 8px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: space-between;
-    justify-items: flex-start;
-    padding-top: 15px;
-    row-gap: 34px;
+  @include media-lg {
+    grid-template-areas:
+      "title adress page-links links"
+      "title opening-hours . .";
+  }
+}
 
-    @include media-sm {
-      column-gap: 17px;
-    }
-
-    @include media-md {
-      grid-template-columns: repeat(3, 1fr);
-      justify-items: center;
-      column-gap: 34px;
-    }
-
-    @include media-lg {
-      column-gap: 100px;
-    }
+.footer__textbox {
+  &--title {
+    grid-area: title;
   }
 
-  &__textbox {
-    &--title {
-      @include media-lg {
-        padding-right: 170px;
-      }
-    }
-
-    &--large {
-      width: 156px;
-
-      @include media-lg {
-        width: 174px;
-      }
-    }
-
-    &--opening-hours {
-      @include media-sm {
-        grid-column-start: 1;
-        grid-row-start: 2;
-      }
-
-      @include media-md {
-        justify-self: start;
-      }
-    }
+  &--adress {
+    grid-area: adress;
   }
 
-  &__text {
-    color: $color-white;
+  &--links {
+    grid-area: links;
+  }
 
-    &--link {
-      @extend .footer__text;
-      display: block;
-    }
+  &--opening-hours {
+    grid-area: opening-hours;
+  }
+
+  &--page-links {
+    grid-area: page-links;
+  }
+}
+
+.footer__text {
+  color: $color-white;
+
+  &--link {
+    @extend .footer__text;
+    display: block;
   }
 }
 
 .h2--footer {
   @extend .h2;
   font-size: 24px;
+  padding-bottom: 0;
+
+  @include media-lg {
+    padding-bottom: 20px;
+  }
 }

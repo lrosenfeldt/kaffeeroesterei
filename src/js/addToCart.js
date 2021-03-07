@@ -1,9 +1,10 @@
 function addToCart(selectedProduct) {
   const cartProducts = JSON.parse(window.localStorage.getItem("products"));
-  const cartIcon = document.getElementById("cartIcon");
-  if (!cartIcon.classList.contains("cart-icon--filled")) {
-    cartIcon.classList.add("cart-icon--filled");
-  }
+  console.log("one");
+  // const cartIcon = document.getElementById("cartIcon");
+  // if (!cartIcon.classList.contains("cart-icon--filled")) {
+  //   cartIcon.classList.add("cart-icon--filled");
+  // }
 
   if (!cartProducts) {
     const newCart = [selectedProduct];

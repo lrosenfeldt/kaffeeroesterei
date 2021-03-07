@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-return */
-import { doc } from "prettier";
+import * as util from "./utils";
 import products from "./products.json";
 import productImages from "../images/products/*.png";
 import tagImages from "../images/products/tags/*.png";
@@ -12,23 +12,12 @@ function pullProduct() {
   return products.find((product) => product.id === productId);
 }
 
-function formattedPrice(price) {
-  return `${(price / 100).toFixed(2)}€`.replace(".", ",");
-}
-
-function variantWeightToText(weight) {
-  if (weight >= 1000) {
-    return `${weight / 1000} kg`.replaceAll(".", ",");
-  }
-  return `${weight} g`;
-}
-
 function fillVariantTemplateGrinded(variant, index) {
   return `
     <li class="dropdown__list-item" id="${index}-ground" role="option" data-price="${
     variant.price
   }" data-weight="${variant.weight}" data-type="ground">
-      ${variantWeightToText(variant.weight)} gemahlen – ${formattedPrice(
+      ${util.weightToText(variant.weight)} gemahlen – ${util.formattedPrice(
     variant.price
   )}
     </li>
@@ -40,7 +29,7 @@ function fillVariantTemplateBeans(variant, index) {
     <li class="dropdown__list-item" id="${index}-beans" role="option" data-price="${
     variant.price
   }" data-weight="${variant.weight}" data-type="beans">
-      ${variantWeightToText(variant.weight)} Bohnen – ${formattedPrice(
+      ${util.weightToText(variant.weight)} Bohnen – ${util.formattedPrice(
     variant.price
   )}
 
@@ -59,15 +48,6 @@ function addHTMLProductVariants(variants) {
     ...variants.map(fillVariantTemplateGrinded),
     ...variants.map(fillVariantTemplateBeans),
   ].join("");
-}
-
-function formattedPriceRange(product) {
-  const minPrice = product.variants[0].price / 100;
-  const maxPrice = product.variants[product.variants.length - 1].price / 100;
-  return `${minPrice.toFixed(2)}€ – ${maxPrice.toFixed(2)}€`.replaceAll(
-    ".",
-    ","
-  );
 }
 
 function fillTagTemplate(tag) {
@@ -99,7 +79,9 @@ function fillTemplate(product) {
       />
     </div>
     <h2 class="text h2 product-showcase__heading">${product.productName}</h2>
-    <p class="text product-showcase__price">${formattedPriceRange(product)}</p>
+    <p class="text product-showcase__price">${util.formattedPriceRange(
+      product
+    )}</p>
     <p class="text product-showcase__text">${product.abstract}</p>
     <div class="dropdown product-showcase__dropdown">
       <button

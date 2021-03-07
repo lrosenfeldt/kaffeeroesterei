@@ -4,11 +4,7 @@
   width: 35px;
   transition: filter 0.25s linear;
   transition-delay: 0.1s;
-  filter: invert(0);
-
-  &--light {
-    filter: invert(1);
-  }
+  filter: invert(1);
 }
 
 .logo--footer {

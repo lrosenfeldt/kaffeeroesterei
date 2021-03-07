@@ -1,27 +1,13 @@
+import * as util from "./utils";
 import products from "./products.json";
 import productImages from "../images/products/*.png";
 import productTags from "../images/products/tags/*.png";
-
-function loadCartFromStorage() {
-  return JSON.parse(window.localStorage.getItem("products"));
-}
 
 function retrieveImageSource(selectedProduct) {
   const fullProduct = products.find(
     (product) => product.id === selectedProduct.id
   );
   return productImages[fullProduct.image];
-}
-
-function weightToText(weight) {
-  if (weight >= 1000) {
-    return `${weight / 1000} kg`.replaceAll(".", ",");
-  }
-  return `${weight} g`;
-}
-
-function formattedPrice(price) {
-  return `${(price / 100).toFixed(2)}€`.replace(".", ",");
 }
 
 function formattedType(type) {
@@ -49,11 +35,11 @@ function fillCartItemTemplate(product, index) {
         <h3 class="h3">${productNameById(product.id)}</h3>
         <div>
           <p class="text">${formattedType(product.type)}</p>
-          <p class="text">${weightToText(product.weight)}</p>
+          <p class="text">${util.weightToText(product.weight)}</p>
           <p class="text cart-item__quantity">${product.quantity}</p>
         </div>
         <p class="text bold">sofort versandbereit</p>
-        <p class="subhead-m cart-item__price">${formattedPrice(
+        <p class="subhead-m cart-item__price">${util.formattedPrice(
           product.quantity * product.price
         )}</p>
         <button class="cart-item__remove-button" data-index="${index}"></button>
@@ -97,11 +83,11 @@ function updateItemElement(price, quantity, index) {
   const quantityElement = itemElement.querySelector(".cart-item__quantity");
   quantityElement.textContent = `${quantity - 1}`;
   const priceElement = itemElement.querySelector(".cart-item__price");
-  priceElement.textContent = `${formattedPrice((quantity - 1) * price)}`;
+  priceElement.textContent = `${util.formattedPrice((quantity - 1) * price)}`;
 }
 
 function removeItemByIndex(index) {
-  const cartProducts = loadCartFromStorage();
+  const cartProducts = util.loadCartFromStorage();
   const { quantity } = cartProducts[index];
   if (quantity === 1) {
     removeItemFromDOM(index);
@@ -131,21 +117,21 @@ function updateBalance(cartProducts) {
     shipping = 0;
   }
   const productElement = document.getElementById("balance-products");
-  productElement.textContent = `${formattedPrice(productPrices)}`;
+  productElement.textContent = `${util.formattedPrice(productPrices)}`;
   const shippingElement = document.getElementById("balance-shipping");
-  shippingElement.textContent = `${formattedPrice(shipping)}`;
+  shippingElement.textContent = `${util.formattedPrice(shipping)}`;
   const totalElement = document.getElementById("balance-total");
-  totalElement.textContent = `${formattedPrice(productPrices + shipping)}`;
+  totalElement.textContent = `${util.formattedPrice(productPrices + shipping)}`;
 }
 
 function handleRemoveButton() {
   const itemIndex = parseInt(this.dataset.index, 10);
   removeItemByIndex(itemIndex);
-  updateBalance(loadCartFromStorage());
+  updateBalance(util.loadCartFromStorage());
 }
 
 function initCart() {
-  const cartProducts = loadCartFromStorage();
+  const cartProducts = util.loadCartFromStorage();
   const cartElement = document.querySelector(".cart");
   if (!cartProducts || cartProducts.length === 0) {
     console.log("test");

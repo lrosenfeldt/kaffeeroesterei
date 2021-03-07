@@ -5,20 +5,25 @@ $transition-delay: 0.1s;
 
 .navbar {
   align-items: flex-start;
-  color: black;
+  color: $color-white;
   border-color: black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-top: 10px;
+  padding-bottom: 5px;
   top: 0;
   left: 0;
   position: fixed;
   z-index: 100;
+  transition-duration: 0.25s;
+  transition-delay: 0.1s;
 
   &--light {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: $color-white;
     border-color: $color-white;
-    color: $color-white;
+    color: black;
   }
 }
 
@@ -41,7 +46,7 @@ $transition-delay: 0.1s;
   background-size: contain;
   border: none;
   display: block;
-  filter: invert(0);
+  filter: invert(1);
   height: 22px;
   transition-delay: calc(#{$transition-duration} - #{$transition-delay});
   transition-duration: $transition-duration;
@@ -68,10 +73,6 @@ $transition-delay: 0.1s;
   width: 30px;
   filter: invert(0);
   z-index: 100;
-
-  &--light {
-    filter: invert(1);
-  }
 
   &--clicked {
     background-image: url(/images/icons/close_x.png);
@@ -111,6 +112,10 @@ $transition-delay: 0.1s;
   @include media-lg {
     display: none;
   }
+}
+
+.icon-inverted {
+  filter: invert(0);
 }
 
 .desktop-menu {

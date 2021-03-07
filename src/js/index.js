@@ -8,17 +8,10 @@
 
 import { doc } from "prettier";
 import initDarkSectionObserver from "./darkSectionObserver";
+import NavbarColorer from "./NavbarColorer";
 import enableBurgerMenu from "./burgeMenu";
 
 window.addEventListener("load", () => {
   enableBurgerMenu();
-
-  const elementsToBeObserved = [
-    document.querySelector(".header"),
-    document.querySelector(".coffee-display"),
-    document.querySelector(".gallery-m"),
-    document.querySelector(".gallery-desktop"),
-  ];
-
-  initDarkSectionObserver(elementsToBeObserved);
+  new NavbarColorer();
 });

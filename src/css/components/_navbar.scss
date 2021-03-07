@@ -6,7 +6,7 @@ $transition-delay: 0.1s;
 .navbar {
   align-items: flex-start;
   color: $color-white;
-  border-color: black;
+  border-color: $color-white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -22,7 +22,7 @@ $transition-delay: 0.1s;
   &--light {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: $color-white;
-    border-color: $color-white;
+    border-color: black;
     color: black;
   }
 }

@@ -8,16 +8,26 @@ class NavbarColorer {
     this.cartIconElements = document.querySelectorAll(".cart-icon");
     this.headerObserver = this.createHeaderObserver();
     this.registerIntersection();
-    if (this.isCartFilled) {
-      this.cartIconElements.forEach((element) => {
-        element.classList.add("cart-icon--filled");
-      });
+    if (!this.isCartEmpty) {
+      this.addFilledCartIcon();
     }
   }
 
-  isCartFilled() {
+  isCartEmpty() {
     const cartProducts = loadCartFromStorage();
     return !cartProducts || cartProducts.length === 0;
+  }
+
+  addFilledCartIcon() {
+    this.cartIconElements.forEach((element) => {
+      element.classList.add("cart-icon--filled");
+    });
+  }
+
+  removeFilledCartIcon() {
+    this.cartIconElements.forEach((element) => {
+      element.classList.remove("cart-icon--filled");
+    });
   }
 
   lightNavbar() {
@@ -60,6 +70,16 @@ class NavbarColorer {
       return;
     }
     this.lightNavbar();
+  }
+
+  registerCartAction() {
+    window.addEventListener("storage", () => {
+      if (this.isCartEmpty) {
+        this.removeFilledCartIcon();
+      } else {
+        this.addFilledCartIcon();
+      }
+    });
   }
 }
 

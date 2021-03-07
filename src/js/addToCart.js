@@ -1,11 +1,5 @@
 function addToCart(selectedProduct) {
   const cartProducts = JSON.parse(window.localStorage.getItem("products"));
-  console.log("one");
-  // const cartIcon = document.getElementById("cartIcon");
-  // if (!cartIcon.classList.contains("cart-icon--filled")) {
-  //   cartIcon.classList.add("cart-icon--filled");
-  // }
-
   if (!cartProducts) {
     const newCart = [selectedProduct];
     window.localStorage.setItem("products", JSON.stringify(newCart));

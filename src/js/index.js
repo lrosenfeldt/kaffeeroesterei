@@ -7,7 +7,6 @@
 // console.log(result);
 
 import { doc } from "prettier";
-import initDarkSectionObserver from "./darkSectionObserver";
 import NavbarColorer from "./NavbarColorer";
 import enableBurgerMenu from "./burgeMenu";
 

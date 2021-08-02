@@ -11,4 +11,4 @@ var e,t=arguments[3];function n(e){return S(e)||D(e)||A(e)||b()}function r(e,t,n
 },{}],"QvaY":[function(require,module,exports) {
 "use strict";var e=require("prettier"),r=t(require("./NavbarColorer")),u=t(require("./burgeMenu"));function t(e){return e&&e.__esModule?e:{default:e}}window.addEventListener("load",function(){(0,u.default)();new r.default});
 },{"prettier":"ToEJ","./NavbarColorer":"MIvA","./burgeMenu":"L5Rx"}]},{},["QvaY"], null)
-//# sourceMappingURL=/js.52815a00.js.map
+//# sourceMappingURL=/kaffeeroesterei/js.52815a00.js.map

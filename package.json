@@ -5,7 +5,11 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.html",
+    "prebuild": "yarn clean",
     "build": "parcel build src/index.html",
+    "predeploy": "parcel build src/index.html src/js/products.json --public-url /kaffeeroesterei",
+    "deploy": "gh-pages -d dist",
+    "clean": "./.clean.bash",
     "lint": "eslint src/js"
   },
   "devDependencies": {
@@ -14,11 +18,12 @@
     "autoprefixer": "9.8.6",
     "babel-eslint": "^10.1.0",
     "css-mqpacker": "^7.0.0",
-    "eslint": "^7.17.0",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^7.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "gh-pages": "^3.2.3",
     "parcel-bundler": "1.12.4",
     "postcss": "7.0.35",
     "postcss-custom-properties": "^10.0.0",
@@ -26,8 +31,5 @@
     "posthtml-include": "^1.6.0",
     "prettier": "^2.2.1",
     "sass": "^1.32.0"
-  },
-  "dependencies": {
-    "cart": "^1.0.4"
   }
 }

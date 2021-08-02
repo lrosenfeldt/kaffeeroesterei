@@ -258,17 +258,17 @@ module.exports = [{
 }];
 },{}],"images/products/fend-coffee-aethiopien.png":[function(require,module,exports) {
 module.exports = "/fend-coffee-aethiopien.f646a2d4.png";
-},{}],"images/products/fend-coffee-brasilien.png":[function(require,module,exports) {
-module.exports = "/fend-coffee-brasilien.a2783143.png";
 },{}],"images/products/fend-coffee-costa-rica-2.png":[function(require,module,exports) {
 module.exports = "/fend-coffee-costa-rica-2.c02424d7.png";
+},{}],"images/products/fend-coffee-brasilien.png":[function(require,module,exports) {
+module.exports = "/fend-coffee-brasilien.a2783143.png";
 },{}],"images/products/*.png":[function(require,module,exports) {
 module.exports = {
   "fend-coffee-aethiopien": require("./fend-coffee-aethiopien.png"),
-  "fend-coffee-brasilien": require("./fend-coffee-brasilien.png"),
-  "fend-coffee-costa-rica-2": require("./fend-coffee-costa-rica-2.png")
+  "fend-coffee-costa-rica-2": require("./fend-coffee-costa-rica-2.png"),
+  "fend-coffee-brasilien": require("./fend-coffee-brasilien.png")
 };
-},{"./fend-coffee-aethiopien.png":"images/products/fend-coffee-aethiopien.png","./fend-coffee-brasilien.png":"images/products/fend-coffee-brasilien.png","./fend-coffee-costa-rica-2.png":"images/products/fend-coffee-costa-rica-2.png"}],"images/products/tags/icon_coffee_beans.png":[function(require,module,exports) {
+},{"./fend-coffee-aethiopien.png":"images/products/fend-coffee-aethiopien.png","./fend-coffee-costa-rica-2.png":"images/products/fend-coffee-costa-rica-2.png","./fend-coffee-brasilien.png":"images/products/fend-coffee-brasilien.png"}],"images/products/tags/icon_coffee_beans.png":[function(require,module,exports) {
 module.exports = "/icon_coffee_beans.0d6e6b8a.png";
 },{}],"images/products/tags/icon_coffee_french-press.png":[function(require,module,exports) {
 module.exports = "/icon_coffee_french-press.42becc06.png";
@@ -393,7 +393,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41367" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43231" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

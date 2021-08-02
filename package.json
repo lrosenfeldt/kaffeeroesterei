@@ -7,7 +7,7 @@
     "start": "parcel src/index.html",
     "prebuild": "yarn clean",
     "build": "parcel build src/index.html",
-    "predeploy": "parcel build src/index.html src/js/products.json --public-url /kaffeeroesterei",
+    "predeploy": "parcel build src/index.html --public-url /kaffeeroesterei",
     "deploy": "gh-pages -d dist",
     "clean": "./.clean.bash",
     "lint": "eslint src/js"

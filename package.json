@@ -5,10 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.html",
-    "prebuild": "yarn clean",
     "build": "parcel build src/index.html",
-    "predeploy": "parcel build src/index.html --public-url /kaffeeroesterei",
-    "deploy": "gh-pages -d dist",
+    "deploy": "./.deploy_gh_pages.bash",
     "clean": "./.clean.bash",
     "lint": "eslint src/js"
   },

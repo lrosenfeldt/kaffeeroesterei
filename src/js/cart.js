@@ -134,8 +134,7 @@ function initCart() {
   const cartProducts = util.loadCartFromStorage();
   const cartElement = document.querySelector(".cart");
   if (!cartProducts || cartProducts.length === 0) {
-    console.log("test");
-    cartElement.innerHTML = `<a class="subhead-m cart__link" href="/shop/index.html">...Zum Shop</a>`;
+    cartElement.innerHTML = `<p class="subhead-m cart__link">Das ist nicht der Kaffee den du suchst...</p>`;
     return;
   }
   cartElement.innerHTML = cartProducts.map(fillCartItemTemplate).join("");

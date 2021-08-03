@@ -13,9 +13,11 @@
   &__grouping {
     align-items: center;
     display: grid;
+    justify-items: center;
     grid-template-columns: 1fr;
     row-gap: 41px;
     width: 100%;
+    padding-bottom: 2rem;
 
     @include media-sm {
       grid-template-columns: repeat(2, 1fr);

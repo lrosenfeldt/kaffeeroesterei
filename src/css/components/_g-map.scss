@@ -4,8 +4,11 @@
   padding-top: 75%;
   position: relative;
   width: 100%;
+  max-width: 1440px;
+  margin: auto;
 
   &__heading {
+    padding-top: 1em;
     padding-bottom: 35px;
     padding-left: $padding-container-m;
   }
